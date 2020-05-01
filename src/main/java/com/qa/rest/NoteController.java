@@ -36,4 +36,10 @@ public class NoteController {
     public Note getNoteById(@PathVariable Long id){
         return this.service.findNoteById(id);
     }
+
+    @PutMapping("/updateNote/{id}")
+    public Note updateNote(@PathVariable Long id, @RequestBody Note note){
+        return this.service.updateNote(id, note);
+    }
+
 }
