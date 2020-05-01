@@ -4,6 +4,8 @@ import com.qa.domain.Note;
 import com.qa.service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -23,7 +25,10 @@ public class NoteController {
         return this.service.readNotes();
     }
 
-
+    @PostMapping("/createNote")
+    public Note createNote(@RequestBody Note note){
+        return this.service.createNote(note);
+    }
 
 
 }
