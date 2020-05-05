@@ -1,9 +1,6 @@
 package com.qa.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -14,6 +11,9 @@ public class Note {
     private Long id;
     private String title;
     private String description;
+
+    @ManyToOne(targetEntity = NoteBook.class)
+    private NoteBook noteBook;
 
     public Long getId() {
         return id;
@@ -37,6 +37,14 @@ public class Note {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public NoteBook getNoteBook() {
+        return noteBook;
+    }
+
+    public void setNoteBook(NoteBook noteBook) {
+        this.noteBook = noteBook;
     }
 
     @Override
