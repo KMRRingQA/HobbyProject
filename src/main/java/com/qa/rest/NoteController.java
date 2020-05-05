@@ -32,23 +32,25 @@ public class NoteController {
     }
 
     @DeleteMapping("/deleteNote/{id}")
-    public boolean deleteNote(@PathVariable Long id){
-        return this.service.deleteNote(id);
+    public ResponseEntity<?> deleteNote(@PathVariable Long id){
+        return this.service.deleteNote(id)
+            ? ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()
+            : ResponseEntity.noContent().build();
     }
 
     @GetMapping("/getNoteById/{id}")
-    public Note getNoteById(@PathVariable Long id){
-        return this.service.findNoteById(id);
+    public ResponseEntity<NoteDTO> getNoteById(@PathVariable Long id){
+        return ResponseEntity.ok(this.service.findNoteById(id));
     }
 
     @PutMapping("/updateNote/{id}")
-    public Note updateNote(@PathVariable Long id, @RequestBody Note note){
-        return this.service.updateNote(id, note);
+    public ResponseEntity<NoteDTO> updateNote(@PathVariable Long id, @RequestBody Note note){
+        return ResponseEntity.ok(this.service.updateNote(id, note));
     }
 
     @PutMapping("/updateNote2")
-    public Note updateNote2(@PathParam("id") Long id, @RequestBody Note note){
-        return this.service.updateNote(id, note);
+    public ResponseEntity<NoteDTO> updateNote2(@PathParam("id") Long id, @RequestBody Note note){
+        return ResponseEntity.ok(this.service.updateNote(id, note));
     }
 
 }
