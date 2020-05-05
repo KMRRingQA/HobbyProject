@@ -1,6 +1,5 @@
 package com.qa.service;
 
-import com.qa.domain.Note;
 import com.qa.domain.NoteBook;
 import com.qa.dto.NoteBookDTO;
 import com.qa.exceptions.NoteBookNotFoundException;

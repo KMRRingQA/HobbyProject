@@ -1,10 +1,8 @@
 package com.qa.rest;
 
-import com.qa.domain.Note;
 import com.qa.domain.NoteBook;
 import com.qa.dto.NoteBookDTO;
 import com.qa.service.NoteBookService;
-import com.qa.service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +23,7 @@ public class NoteBookController {
 
     @GetMapping("/getAllNoteBooks")
     public ResponseEntity<List<NoteBookDTO>> getAllNotes(){
-        return new ResponseEntity<List<NoteBookDTO>>(this.service.readNoteBooks(), HttpStatus.ACCEPTED);
+        return ResponseEntity.ok(this.service.readNoteBooks());
     }
 
     @PostMapping("/createNoteBook")

@@ -1,5 +1,7 @@
 package com.qa.dto;
 
+import com.qa.domain.NoteBook;
+
 public class NoteDTO {
 
     private Long id;
@@ -37,4 +39,5 @@ public class NoteDTO {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }
