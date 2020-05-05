@@ -33,19 +33,21 @@ public class NoteService {
         return this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
     }
 
-    public Note createNote(Note note){
-        return this.repo.save(note);
+    public NoteDTO createNote(Note note){
+        Note tempNote = this.repo.save(note);
+        return this.mapToDTO(tempNote);
     }
 
-    public Note findNoteById(Long id){
-        return this.repo.findById(id).orElseThrow(NoteNotFoundException::new);
+    public NoteDTO findNoteById(Long id){
+        return this.mapToDTO(this.repo.findById(id).orElseThrow(NoteNotFoundException::new));
     }
 
-    public Note updateNote(Long id, Note note){
-        Note update = findNoteById(id);
+    public NoteDTO updateNote(Long id, Note note){
+        Note update = this.repo.findById(id).orElseThrow(NoteNotFoundException::new);
         update.setTitle(note.getTitle());
         update.setDescription(note.getDescription());
-        return this.repo.save(update);
+        Note tempNote = this.repo.save(note);
+        return this.mapToDTO(tempNote);
     }
 
     public boolean deleteNote(Long id){
