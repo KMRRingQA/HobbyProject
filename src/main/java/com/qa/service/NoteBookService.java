@@ -2,10 +2,10 @@ package com.qa.service;
 
 import com.qa.domain.Note;
 import com.qa.domain.NoteBook;
+import com.qa.dto.NoteBookDTO;
 import com.qa.exceptions.NoteBookNotFoundException;
-import com.qa.exceptions.NoteNotFoundException;
 import com.qa.repo.NoteBookRepository;
-import com.qa.repo.NotesRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,9 +16,16 @@ public class NoteBookService {
 
     private final NoteBookRepository repo;
 
+    private final ModelMapper mapper;
+
     @Autowired
-    public NoteBookService(NoteBookRepository repo) {
+    public NoteBookService(NoteBookRepository repo, ModelMapper mapper) {
         this.repo = repo;
+        this.mapper = mapper;
+    }
+
+    private NoteBookDTO mapToDTO(NoteBook noteBook){
+        return this.mapper.map(noteBook, NoteBookDTO.class);
     }
 
     public List<NoteBook> readNoteBooks(){
