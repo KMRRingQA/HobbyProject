@@ -1,8 +1,11 @@
 package com.qa.rest;
 
 import com.qa.domain.Note;
+import com.qa.dto.NoteDTO;
 import com.qa.service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
@@ -19,13 +22,13 @@ public class NoteController {
     }
 
     @GetMapping("/getAllNotes")
-    public List<Note> getAllNotes(){
-        return this.service.readNotes();
+    public ResponseEntity<List<NoteDTO>> getAllNotes(){
+        return ResponseEntity.ok(this.service.readNotes());
     }
 
     @PostMapping("/createNote")
-    public Note createNote(@RequestBody Note note){
-        return this.service.createNote(note);
+    public ResponseEntity<NoteDTO> createNote(@RequestBody Note note){
+        return new ResponseEntity<NoteDTO>(this.service.createNote(note), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/deleteNote/{id}")
