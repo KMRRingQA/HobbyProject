@@ -1,26 +1,36 @@
 package com.qa.service;
 
 import com.qa.domain.Note;
+import com.qa.dto.NoteDTO;
 import com.qa.exceptions.NoteNotFoundException;
 import com.qa.repo.NotesRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @Service
 public class NoteService {
 
     private final NotesRepository repo;
 
+    private final ModelMapper mapper;
+
     @Autowired
-    public NoteService(NotesRepository repo) {
+    public NoteService(NotesRepository repo, ModelMapper mapper) {
         this.repo = repo;
+        this.mapper = mapper;
     }
 
-    public List<Note> readNotes(){
-        return this.repo.findAll();
+    private NoteDTO mapToDTO(Note note){
+        return this.mapper.map(note, NoteDTO.class);
+    }
+
+
+    public List<NoteDTO> readNotes(){
+        return this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
     }
 
     public Note createNote(Note note){
