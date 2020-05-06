@@ -70,5 +70,14 @@ public class NoteServiceUnitTest {
         verify(repository, times(1)).save(this.testNote);
     }
 
+    @Test
+    public void findNoteByIdTest(){
+        when(this.repository.findById(id)).thenReturn(java.util.Optional.ofNullable(testNoteWithID));
+        when(this.mapper.map(testNoteWithID, NoteDTO.class)).thenReturn(noteDTO);
+        assertEquals(this.service.findNoteById(this.id), noteDTO);
+        verify(repository, times(1)).findById(id);
+    }
+
+
 
 }
