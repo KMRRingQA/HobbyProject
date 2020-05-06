@@ -70,6 +70,18 @@ public class NotesControllerUnitTest {
         verify(this.service, times(1)).createNote(testNote);
     }
 
+    @Test
+    public void deleteNoteTest(){
+        this.notesController.deleteNote(id);
+        verify(service, times(1)).deleteNote(id);
+    }
 
+
+    @Test
+    public void deleteNoteTest2(){
+        when(service.deleteNote(3L)).thenReturn(true);
+        this.notesController.deleteNote(3L);
+        verify(service, times(1)).deleteNote(3L);
+    }
 
 }
