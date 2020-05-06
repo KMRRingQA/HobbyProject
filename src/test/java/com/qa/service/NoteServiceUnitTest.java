@@ -2,6 +2,7 @@ package com.qa.service;
 
 import com.qa.domain.Note;
 import com.qa.dto.NoteDTO;
+import com.qa.exceptions.NoteNotFoundException;
 import com.qa.repo.NotesRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -78,6 +79,37 @@ public class NoteServiceUnitTest {
         verify(repository, times(1)).findById(id);
     }
 
+    @Test
+    public void deleteNoteByExistingId(){
+        when(this.repository.existsById(id)).thenReturn(true, false);
+        assertFalse(service.deleteNote(id));
+        verify(repository, times(1)).deleteById(id);
+        verify(repository, times(2)).existsById(id);
+    }
 
+    @Test(expected = NoteNotFoundException.class)
+    public void deleteNoteByNonExistingId(){
+        when(this.repository.existsById(id)).thenReturn(false);
+        service.deleteNote(id);
+        verify(repository, times(1)).existsById(id);
+    }
+
+//    @Test
+//    public void updateNoteTest(){
+//
+//        Note newNote = new Note("Favourite movies", "The grinch");
+//        Note updateNote = new Note(newNote.getTitle(), newNote.getDescription());
+//        updateNote.setId(id);
+//
+//        NoteDTO updateNoteDTO = new ModelMapper().map(updateNote, NoteDTO.class);
+//
+//        when(this.repository.findById(id)).thenReturn(java.util.Optional.ofNullable(testNoteWithID));
+//        when(this.repository.save(updateNote)).thenReturn(updateNote);
+//        when(this.mapper.map(updateNote, NoteDTO.class)).thenReturn(updateNoteDTO);
+//
+//        assertEquals(updateNoteDTO, this.service.updateNote(id, newNote));
+//        verify(this.repository, times(1)).findById(id);
+//        verify(this.repository, times(1)).save(updateNote);
+//    }
 
 }
