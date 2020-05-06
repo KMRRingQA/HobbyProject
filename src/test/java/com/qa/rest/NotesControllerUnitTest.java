@@ -3,12 +3,14 @@ package com.qa.rest;
 import com.qa.domain.Note;
 import com.qa.dto.NoteDTO;
 import com.qa.service.NoteService;
+import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.modelmapper.ModelMapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -34,6 +36,16 @@ public class NotesControllerUnitTest {
 
     private NoteDTO mapToDTO(Note note){
         return this.mapper.map(note, NoteDTO.class);
+    }
+
+    @Before
+    public void setUp(){
+        this.notes = new ArrayList<>();
+        this.testNote = new Note("Test title", "Test description");
+        this.notes.add(testNote);
+        this.testNoteWitId = new Note(testNote.getTitle(), testNote.getDescription());
+        this.testNoteWitId.setId(this.id);
+        this.noteDTO = this.mapToDTO(testNoteWitId);
     }
 
 
