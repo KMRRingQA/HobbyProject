@@ -3,6 +3,7 @@ package com.qa.service;
 import com.qa.domain.Note;
 import com.qa.dto.NoteDTO;
 import com.qa.repo.NotesRepository;
+import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.modelmapper.ModelMapper;
@@ -27,6 +28,13 @@ public class NoteServiceIntegrationTest {
 
     private NoteDTO mapToDTO(Note note){
         return this.mapper.map(note, NoteDTO.class);
+    }
+
+    @Before
+    public void setUp(){
+        this.testNote = new Note("My title", "my description");
+        this.repository.deleteAll();
+        this.testNoteWithID = this.repository.save(this.testNote);
     }
 
 
