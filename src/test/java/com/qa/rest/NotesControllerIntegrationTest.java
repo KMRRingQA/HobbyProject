@@ -93,4 +93,12 @@ public class NotesControllerIntegrationTest {
         assertEquals(result, this.objectMapper.writeValueAsString(noteDTO));
     }
 
+    @Test
+    public void deleteNoteTest() throws Exception {
+        this.mock.perform(
+                request(HttpMethod.DELETE, "/deleteNote/" + this.id)
+        ).andExpect(status().isNoContent());
+    }
+
+
 }
