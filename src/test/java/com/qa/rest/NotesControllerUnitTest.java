@@ -4,6 +4,7 @@ import com.qa.domain.Note;
 import com.qa.dto.NoteDTO;
 import com.qa.service.NoteService;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -12,6 +13,10 @@ import org.modelmapper.ModelMapper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.junit.Assert.assertFalse;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class NotesControllerUnitTest {
@@ -48,7 +53,12 @@ public class NotesControllerUnitTest {
         this.noteDTO = this.mapToDTO(testNoteWitId);
     }
 
-
+    @Test
+    public void getAllNotesTest(){
+        when(service.readNotes()).thenReturn(this.notes.stream().map(this::mapToDTO).collect(Collectors.toList()));
+        assertFalse("No notes found", this.notesController.getAllNotes().getBody().isEmpty());
+        verify(service, times(1)).readNotes();
+    }
 
 
 
