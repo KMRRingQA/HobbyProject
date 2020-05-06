@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.*;
 
@@ -60,5 +61,14 @@ public class NoteServiceUnitTest {
         assertFalse("Service returned no Notes", this.service.readNotes().isEmpty());
         verify(repository, times(1)).findAll();
     }
+
+    @Test
+    public void createNoteTest(){
+        when(repository.save(testNote)).thenReturn(testNoteWithID);
+        when(this.mapper.map(testNoteWithID, NoteDTO.class)).thenReturn(noteDTO);
+        assertEquals(this.service.createNote(testNote), this.noteDTO);
+        verify(repository, times(1)).save(this.testNote);
+    }
+
 
 }
