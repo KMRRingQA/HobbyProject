@@ -4,6 +4,7 @@ import com.qa.domain.Note;
 import com.qa.dto.NoteDTO;
 import com.qa.repo.NotesRepository;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -12,6 +13,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertFalse;
+import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
 public class NoteServiceUnitTest {
@@ -49,6 +53,12 @@ public class NoteServiceUnitTest {
         this.noteDTO = this.mapToDTO(testNoteWithID);
     }
 
-
+    @Test
+    public void getAllNotesTest(){
+        when(repository.findAll()).thenReturn(this.noteList);
+        when(this.mapper.map(testNoteWithID, NoteDTO.class)).thenReturn(noteDTO);
+        assertFalse("Service returned no Notes", this.service.readNotes().isEmpty());
+        verify(repository, times(1)).findAll();
+    }
 
 }
