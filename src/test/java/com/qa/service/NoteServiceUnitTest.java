@@ -3,12 +3,14 @@ package com.qa.service;
 import com.qa.domain.Note;
 import com.qa.dto.NoteDTO;
 import com.qa.repo.NotesRepository;
+import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.modelmapper.ModelMapper;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -36,5 +38,17 @@ public class NoteServiceUnitTest {
     private NoteDTO mapToDTO(Note note){
         return this.mapper.map(note, NoteDTO.class);
     }
+
+    @Before
+    public void setUp(){
+        this.noteList = new ArrayList<>();
+        this.testNote = new Note("Shopping list", "Beer and even more beer");
+        this.noteList.add(testNote);
+        this.testNoteWithID = new Note(testNote.getTitle(), testNote.getDescription());
+        this.testNoteWithID.setId(id);
+        this.noteDTO = this.mapToDTO(testNoteWithID);
+    }
+
+
 
 }
