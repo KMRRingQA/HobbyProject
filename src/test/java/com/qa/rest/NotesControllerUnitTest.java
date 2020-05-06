@@ -10,11 +10,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.*;
 
@@ -58,6 +61,13 @@ public class NotesControllerUnitTest {
         when(service.readNotes()).thenReturn(this.notes.stream().map(this::mapToDTO).collect(Collectors.toList()));
         assertFalse("No notes found", this.notesController.getAllNotes().getBody().isEmpty());
         verify(service, times(1)).readNotes();
+    }
+
+    @Test
+    public void createNoteTest(){
+        when(this.service.createNote(testNote)).thenReturn(this.noteDTO);
+        assertEquals(this.notesController.createNote(testNote), new ResponseEntity<NoteDTO>(this.noteDTO, HttpStatus.CREATED));
+        verify(this.service, times(1)).createNote(testNote);
     }
 
 
