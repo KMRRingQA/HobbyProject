@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.domain.Note;
 import com.qa.dto.NoteDTO;
 import com.qa.repo.NotesRepository;
+import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,13 @@ public class NotesControllerIntegrationTest {
         return this.mapper.map(note, NoteDTO.class);
     }
 
-
+    @Before
+    public void setUp(){
+        this.repository.deleteAll();
+        this.testNote = new Note("test note", "test description");
+        this.testNoteWithID = this.repository.save(testNote);
+        this.id = testNoteWithID.getId();
+        this.noteDTO = this.mapToDTO(testNoteWithID);
+    }
 
 }
