@@ -1,5 +1,6 @@
 package com.qa.rest;
 
+import com.qa.domain.Note;
 import com.qa.domain.NoteBook;
 import com.qa.dto.NoteBookDTO;
 import com.qa.service.NoteBookService;
@@ -51,6 +52,11 @@ public class NoteBookController {
     @PutMapping("/updateNoteBook2")
     public ResponseEntity<NoteBookDTO> updateNote2(@PathParam("id") Long id, @RequestBody NoteBook note){
         return ResponseEntity.ok(this.service.updateNoteBook(id, note));
+    }
+
+    @PatchMapping("/addNoteToNoteBook/{id}")
+    public ResponseEntity<NoteBookDTO> addNoteToNotebook(@PathVariable Long id, @RequestBody Note note){
+        return new ResponseEntity<NoteBookDTO>(this.service.addNoteToNoteBook(id, note), HttpStatus.ACCEPTED);
     }
 
 }

@@ -1,6 +1,5 @@
 package com.qa.dto;
 
-import com.qa.domain.Note;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,15 +7,14 @@ public class NoteBookDTO {
 
     private Long id;
     private String name;
-    private List<NoteDTO> notes;
+    private List<NoteDTO> notes = new ArrayList<>();
 
     public NoteBookDTO() {
     }
 
-    public NoteBookDTO(String name, List<NoteDTO> notes) {
+    public NoteBookDTO(String name) {
         super();
         this.name = name;
-        this.notes = notes;
     }
 
     public Long getId() {
