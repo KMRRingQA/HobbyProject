@@ -23,7 +23,6 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.request;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
@@ -76,6 +75,19 @@ public class NotesControllerIntegrationTest {
             .getResponse()
             .getContentAsString();
         assertEquals(content, this.objectMapper.writeValueAsString(noteDTOList));
+    }
+
+    @Test
+    public void getNoteByID() throws Exception {
+        String content = this.mock.perform(
+                request(HttpMethod.GET, "/getNoteById/" + this.id)
+                .accept(MediaType.APPLICATION_JSON)
+        )
+            .andExpect(status().isOk())
+            .andReturn()
+            .getResponse()
+            .getContentAsString();
+        assertEquals(content, this.objectMapper.writeValueAsString(noteDTO));
     }
 
     @Test
