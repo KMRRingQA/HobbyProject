@@ -39,7 +39,8 @@ public class NoteService {
     }
 
     public NoteDTO findNoteById(Long id){
-        return this.mapToDTO(this.repo.findById(id).orElseThrow(NoteNotFoundException::new));
+        return this.mapToDTO(this.repo.findById(id)
+                .orElseThrow(NoteNotFoundException::new));
     }
 
     public NoteDTO updateNote(Long id, Note note){

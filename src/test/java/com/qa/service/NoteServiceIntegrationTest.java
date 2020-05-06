@@ -59,6 +59,11 @@ public class NoteServiceIntegrationTest {
         assertEquals(this.mapToDTO(this.testNoteWithID), this.service.createNote(testNote));
     }
 
+    @Test
+    public void findNoteByIdTest(){
+        assertThat(this.service.findNoteById(this.testNoteWithID.getId())).isEqualTo(this.mapToDTO(this.testNoteWithID));
+    }
+
 
 
 }
