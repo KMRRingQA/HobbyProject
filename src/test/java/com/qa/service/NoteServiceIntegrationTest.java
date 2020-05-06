@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -52,5 +53,12 @@ public class NoteServiceIntegrationTest {
                 Stream.of(this.mapToDTO(testNoteWithID)).collect(Collectors.toList())
         );
     }
+
+    @Test
+    public void createNoteTest(){
+        assertEquals(this.mapToDTO(this.testNoteWithID), this.service.createNote(testNote));
+    }
+
+
 
 }
