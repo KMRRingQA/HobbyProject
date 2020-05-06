@@ -71,17 +71,24 @@ public class NotesControllerUnitTest {
     }
 
     @Test
-    public void deleteNoteTest(){
+    public void deleteNoteTestFalse(){
         this.notesController.deleteNote(id);
         verify(service, times(1)).deleteNote(id);
     }
 
 
     @Test
-    public void deleteNoteTest2(){
+    public void deleteNoteTestTrue(){
         when(service.deleteNote(3L)).thenReturn(true);
         this.notesController.deleteNote(3L);
         verify(service, times(1)).deleteNote(3L);
+    }
+
+    @Test
+    public void getNoteByIDTest(){
+        when(this.service.findNoteById(id)).thenReturn(this.noteDTO);
+        assertEquals(this.notesController.getNoteById(id), new ResponseEntity<NoteDTO>(this.noteDTO, HttpStatus.OK));
+        verify(service, times(1)).findNoteById(id);
     }
 
 }
