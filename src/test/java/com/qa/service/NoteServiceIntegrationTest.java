@@ -65,5 +65,19 @@ public class NoteServiceIntegrationTest {
     }
 
 
+//    @Test
+//    public void updateNoteTest(){
+//        Note newNote = new Note("Favourite movies", "The grinch");
+//        Note updateNote = new Note(newNote.getTitle(), newNote.getDescription());
+//        updateNote.setId(this.testNoteWithID.getId());
+//        assertThat(this.service.updateNote(this.testNoteWithID.getId() ,newNote))
+//                .isEqualTo(this.mapToDTO(updateNote));
+//    }
+
+    @Test
+    public void deleteNoteTest(){
+        assertThat(this.service.deleteNote(this.testNoteWithID.getId())).isFalse();
+    }
+
 
 }
