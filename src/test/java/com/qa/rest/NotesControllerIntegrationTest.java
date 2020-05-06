@@ -1,5 +1,6 @@
 package com.qa.rest;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.domain.Note;
 import com.qa.dto.NoteDTO;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -74,6 +76,21 @@ public class NotesControllerIntegrationTest {
             .getResponse()
             .getContentAsString();
         assertEquals(content, this.objectMapper.writeValueAsString(noteDTOList));
+    }
+
+    @Test
+    public void createNoteTest() throws Exception {
+        String result = this.mock.perform(
+                request(HttpMethod.POST, "/createNote")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(this.objectMapper.writeValueAsString(testNote))
+                .accept(MediaType.APPLICATION_JSON)
+        )
+            .andExpect(status().isCreated())
+            .andReturn()
+            .getResponse()
+            .getContentAsString();
+        assertEquals(result, this.objectMapper.writeValueAsString(noteDTO));
     }
 
 }
