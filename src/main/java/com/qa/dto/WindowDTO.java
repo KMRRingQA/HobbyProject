@@ -1,26 +1,18 @@
-package com.qa.domain;
+package com.qa.dto;
 
-import javax.persistence.*;
-import java.util.Objects;
+import com.qa.domain.NoteBook;
 
-@Entity
-public class Note {
+public class WindowDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String title;
     private String description;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//  @JoinColumn(name = "note_book_id")
     private NoteBook noteBook;
 
-    public Note() {
+    public WindowDTO() {
     }
 
-    public Note(String title, String description) {
+    public WindowDTO(String title, String description) {
         this.title = title;
         this.description = description;
     }
@@ -49,12 +41,12 @@ public class Note {
         this.description = description;
     }
 
-    public NoteBook getNoteBook() {
-        return noteBook;
-    }
-
     public void setNoteBook(NoteBook noteBook) {
         this.noteBook = noteBook;
+    }
+
+    public String getNoteBook() {
+        return noteBook.getName();
     }
 
     @Override
@@ -65,7 +57,7 @@ public class Note {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Note other = (Note) obj;
+        WindowDTO other = (WindowDTO) obj;
         if (description == null) {
             if (other.description != null)
                 return false;
@@ -82,11 +74,6 @@ public class Note {
         } else if (!title.equals(other.title))
             return false;
         return true;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title, description);
     }
 
 }

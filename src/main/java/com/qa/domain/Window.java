@@ -4,11 +4,12 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-public class Note {
+public class Window {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
 
     private String title;
     private String description;
@@ -17,10 +18,10 @@ public class Note {
 //  @JoinColumn(name = "note_book_id")
     private NoteBook noteBook;
 
-    public Note() {
+    public Window() {
     }
 
-    public Note(String title, String description) {
+    public Window(String title, String description) {
         this.title = title;
         this.description = description;
     }
@@ -65,7 +66,7 @@ public class Note {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Note other = (Note) obj;
+        Window other = (Window) obj;
         if (description == null) {
             if (other.description != null)
                 return false;
