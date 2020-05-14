@@ -8,6 +8,7 @@ public class NoteBookDTO {
     private Long id;
     private String name;
     private List<NoteDTO> notes = new ArrayList<>();
+    private List<DoorDTO> doors = new ArrayList<>();
 
     public NoteBookDTO() {
     }
@@ -39,6 +40,14 @@ public class NoteBookDTO {
 
     public void setNotes(List<NoteDTO> notes) {
         this.notes = notes;
+    }
+
+    public List<DoorDTO> getDoors() {
+        return doors;
+    }
+
+    public void setDoors(List<DoorDTO> doors) {
+        this.doors = doors;
     }
 
 }
