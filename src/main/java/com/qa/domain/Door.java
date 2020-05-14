@@ -15,7 +15,7 @@ public class Door {
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "note_book_id")
+//  @JoinColumn(name = "note_book_id")
     private NoteBook noteBook;
 
     public Door() {
