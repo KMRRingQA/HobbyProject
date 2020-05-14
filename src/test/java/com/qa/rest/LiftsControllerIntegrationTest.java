@@ -2,9 +2,9 @@ package com.qa.rest;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.qa.domain.Note;
-import com.qa.dto.NoteDTO;
-import com.qa.repo.NotesRepository;
+import com.qa.domain.Lift;
+import com.qa.dto.LiftDTO;
+import com.qa.repo.LiftsRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,87 +28,87 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class NotesControllerIntegrationTest {
+public class LiftsControllerIntegrationTest {
 
     @Autowired
     private MockMvc mock;
 
     @Autowired
-    private NotesRepository repository;
+    private LiftsRepository repository;
 
     @Autowired
     private ModelMapper mapper;
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
-    private Note testNote;
+    private Lift testLift;
 
-    private Note testNoteWithID;
+    private Lift testLiftWithID;
 
     private long id;
 
-    private NoteDTO noteDTO;
+    private LiftDTO liftDTO;
 
-    private NoteDTO mapToDTO(Note note){
-        return this.mapper.map(note, NoteDTO.class);
+    private LiftDTO mapToDTO(Lift lift){
+        return this.mapper.map(lift, LiftDTO.class);
     }
 
     @Before
     public void setUp(){
         this.repository.deleteAll();
-        this.testNote = new Note("test note", "test description");
-        this.testNoteWithID = this.repository.save(testNote);
-        this.id = testNoteWithID.getId();
-        this.noteDTO = this.mapToDTO(testNoteWithID);
+        this.testLift = new Lift("test lift", "test description");
+        this.testLiftWithID = this.repository.save(testLift);
+        this.id = testLiftWithID.getId();
+        this.liftDTO = this.mapToDTO(testLiftWithID);
     }
 
     @Test
-    public void getAllNotesTest() throws Exception {
-        List<NoteDTO> noteDTOList = new ArrayList<>();
-        noteDTOList.add(noteDTO);
+    public void getAllLiftsTest() throws Exception {
+        List<LiftDTO> liftDTOList = new ArrayList<>();
+        liftDTOList.add(liftDTO);
         String content = this.mock.perform(
-            request(HttpMethod.GET, "/getAllNotes")
+            request(HttpMethod.GET, "/getAllLifts")
                 .accept(MediaType.APPLICATION_JSON)
         )
             .andExpect(status().isOk())
             .andReturn()
             .getResponse()
             .getContentAsString();
-        assertEquals(content, this.objectMapper.writeValueAsString(noteDTOList));
+        assertEquals(content, this.objectMapper.writeValueAsString(liftDTOList));
     }
 
     @Test
-    public void getNoteByID() throws Exception {
+    public void getLiftByID() throws Exception {
         String content = this.mock.perform(
-                request(HttpMethod.GET, "/getNoteById/" + this.id)
+                request(HttpMethod.GET, "/getLiftById/" + this.id)
                 .accept(MediaType.APPLICATION_JSON)
         )
             .andExpect(status().isOk())
             .andReturn()
             .getResponse()
             .getContentAsString();
-        assertEquals(content, this.objectMapper.writeValueAsString(noteDTO));
+        assertEquals(content, this.objectMapper.writeValueAsString(liftDTO));
     }
 
     @Test
-    public void createNoteTest() throws Exception {
+    public void createLiftTest() throws Exception {
         String result = this.mock.perform(
-                request(HttpMethod.POST, "/createNote")
+                request(HttpMethod.POST, "/createLift")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(this.objectMapper.writeValueAsString(testNote))
+                .content(this.objectMapper.writeValueAsString(testLift))
                 .accept(MediaType.APPLICATION_JSON)
         )
             .andExpect(status().isCreated())
             .andReturn()
             .getResponse()
             .getContentAsString();
-        assertEquals(result, this.objectMapper.writeValueAsString(noteDTO));
+        assertEquals(result, this.objectMapper.writeValueAsString(liftDTO));
     }
 
     @Test
-    public void deleteNoteTest() throws Exception {
+    public void deleteLiftTest() throws Exception {
         this.mock.perform(
-                request(HttpMethod.DELETE, "/deleteNote/" + this.id)
+                request(HttpMethod.DELETE, "/deleteLift/" + this.id)
         ).andExpect(status().isNoContent());
     }
 

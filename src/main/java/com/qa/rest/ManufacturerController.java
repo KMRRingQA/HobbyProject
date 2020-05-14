@@ -1,6 +1,5 @@
 package com.qa.rest;
 
-import com.qa.domain.Note;
 import com.qa.domain.Manufacturer;
 import com.qa.dto.ManufacturerDTO;
 import com.qa.service.ManufacturerService;

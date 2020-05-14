@@ -1,11 +1,11 @@
 package com.qa.service;
 
-import com.qa.domain.Note;
+import com.qa.domain.Lift;
 import com.qa.domain.Manufacturer;
 import com.qa.dto.ManufacturerDTO;
 import com.qa.exceptions.ManufacturerNotFoundException;
 import com.qa.repo.ManufacturerRepository;
-import com.qa.repo.NotesRepository;
+import com.qa.repo.LiftsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,14 +18,14 @@ public class ManufacturerService {
 
     private final ManufacturerRepository manufacturerRepository;
 
-    private final NotesRepository notesRepository;
+    private final LiftsRepository liftsRepository;
 
     private final ModelMapper mapper;
 
     @Autowired
-    public ManufacturerService(ManufacturerRepository manufacturerRepository, NotesRepository notesRepository, ModelMapper mapper) {
+    public ManufacturerService(ManufacturerRepository manufacturerRepository, LiftsRepository liftsRepository, ModelMapper mapper) {
         this.manufacturerRepository = manufacturerRepository;
-        this.notesRepository = notesRepository;
+        this.liftsRepository = liftsRepository;
         this.mapper = mapper;
     }
 
@@ -58,13 +58,6 @@ public class ManufacturerService {
         }
         this.manufacturerRepository.deleteById(id);
         return this.manufacturerRepository.existsById(id);
-    }
-
-    public ManufacturerDTO addNoteToManufacturer(Long id, Note note){
-        Manufacturer manufacturer = this.manufacturerRepository.findById(id).orElseThrow(ManufacturerNotFoundException::new);
-        Note tmp = this.notesRepository.saveAndFlush(note);
-        manufacturer.getNotes().add(tmp);
-        return this.mapToDTO(this.manufacturerRepository.saveAndFlush(manufacturer));
     }
 
 }
