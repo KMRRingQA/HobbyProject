@@ -7,6 +7,7 @@ public class NoteDTO {
     private Long id;
     private String title;
     private String description;
+    private NoteBook noteBook;
 
     public NoteDTO() {
     }
@@ -38,6 +39,14 @@ public class NoteDTO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setNoteBook(NoteBook noteBook) {
+        this.noteBook = noteBook;
+    }
+
+    public String getNoteBook() {
+        return noteBook.getName();
     }
 
     @Override

@@ -16,6 +16,9 @@ public class NoteBook {
     @OneToMany(mappedBy = "noteBook", fetch = FetchType.LAZY)
     private List<Note> notes = new ArrayList<>();
 
+    @OneToMany(mappedBy = "noteBook", fetch = FetchType.LAZY)
+    private List<Door> doors = new ArrayList<>();
+
     public NoteBook() {
     }
 
@@ -45,5 +48,13 @@ public class NoteBook {
 
     public void setNotes(List<Note> notes) {
         this.notes = notes;
+    }
+
+    public List<Door> getDoors() {
+        return doors;
+    }
+
+    public void setDoors(List<Door> doors) {
+        this.doors = doors;
     }
 }

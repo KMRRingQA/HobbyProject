@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-public class Note {
+public class Door {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,10 +18,10 @@ public class Note {
     @JoinColumn(name = "note_book_id")
     private NoteBook noteBook;
 
-    public Note() {
+    public Door() {
     }
 
-    public Note(String title, String description) {
+    public Door(String title, String description) {
         this.title = title;
         this.description = description;
     }
@@ -66,7 +66,7 @@ public class Note {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Note other = (Note) obj;
+        Door other = (Door) obj;
         if (description == null) {
             if (other.description != null)
                 return false;
