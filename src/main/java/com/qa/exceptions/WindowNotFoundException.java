@@ -5,6 +5,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.persistence.EntityNotFoundException;
 
-@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "The door doesn't exist")
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "The window doesn't exist")
 public class WindowNotFoundException extends EntityNotFoundException {
 }

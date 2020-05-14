@@ -1,8 +1,8 @@
 package com.qa.rest;
 
-import com.qa.domain.Door;
-import com.qa.dto.DoorDTO;
-import com.qa.service.DoorService;
+import com.qa.domain.Window;
+import com.qa.dto.WindowDTO;
+import com.qa.service.WindowService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,43 +13,43 @@ import java.util.List;
 @RestController
 public class WindowController {
 
-    private final DoorService service;
+    private final WindowService service;
 
     @Autowired
-    public WindowController(DoorService service) {
+    public WindowController(WindowService service) {
         this.service = service;
     }
 
-    @GetMapping("/getAllDoors")
-    public ResponseEntity<List<DoorDTO>> getAllDoors(){
-        return ResponseEntity.ok(this.service.readDoors());
+    @GetMapping("/getAllWindows")
+    public ResponseEntity<List<WindowDTO>> getAllWindows(){
+        return ResponseEntity.ok(this.service.readWindows());
     }
 
-    @PostMapping("/createDoor")
-    public ResponseEntity<DoorDTO> createDoor(@RequestBody Door door){
-        return new ResponseEntity<DoorDTO>(this.service.createDoor(door), HttpStatus.CREATED);
+    @PostMapping("/createWindow")
+    public ResponseEntity<WindowDTO> createWindow(@RequestBody Window window){
+        return new ResponseEntity<WindowDTO>(this.service.createWindow(window), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/deleteDoor/{id}")
-    public ResponseEntity<?> deleteDoor(@PathVariable Long id){
-        return this.service.deleteDoor(id)
+    @DeleteMapping("/deleteWindow/{id}")
+    public ResponseEntity<?> deleteWindow(@PathVariable Long id){
+        return this.service.deleteWindow(id)
             ? ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()
             : ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/getDoorById/{id}")
-    public ResponseEntity<DoorDTO> getDoorById(@PathVariable Long id){
-        return ResponseEntity.ok(this.service.findDoorById(id));
+    @GetMapping("/getWindowById/{id}")
+    public ResponseEntity<WindowDTO> getWindowById(@PathVariable Long id){
+        return ResponseEntity.ok(this.service.findWindowById(id));
     }
 
-    @PutMapping("/updateDoor/{id}")
-    public ResponseEntity<DoorDTO> updateDoor(@PathVariable Long id, @RequestBody Door door){
-        return ResponseEntity.ok(this.service.updateDoor(id, door));
+    @PutMapping("/updateWindow/{id}")
+    public ResponseEntity<WindowDTO> updateWindow(@PathVariable Long id, @RequestBody Window window){
+        return ResponseEntity.ok(this.service.updateWindow(id, window));
     }
 //
-//    @PutMapping("/updateDoor2")
-//    public ResponseEntity<DoorDTO> updateDoor2(@PathParam("id") Long id, @RequestBody Door door){
-//        return ResponseEntity.ok(this.service.updateDoor(id, door));
+//    @PutMapping("/updateWindow2")
+//    public ResponseEntity<WindowDTO> updateWindow2(@PathParam("id") Long id, @RequestBody Window window){
+//        return ResponseEntity.ok(this.service.updateWindow(id, window));
 //    }
 
 }
