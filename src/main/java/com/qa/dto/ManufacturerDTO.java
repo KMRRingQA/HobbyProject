@@ -7,7 +7,7 @@ public class ManufacturerDTO {
 
     private Long id;
     private String name;
-    private List<NoteDTO> notes = new ArrayList<>();
+    private List<LiftDTO> lifts = new ArrayList<>();
     private List<DoorDTO> doors = new ArrayList<>();
 
     public ManufacturerDTO() {
@@ -34,12 +34,12 @@ public class ManufacturerDTO {
         this.name = name;
     }
 
-    public List<NoteDTO> getNotes() {
-        return notes;
+    public List<LiftDTO> getNotes() {
+        return lifts;
     }
 
-    public void setNotes(List<NoteDTO> notes) {
-        this.notes = notes;
+    public void setNotes(List<LiftDTO> notes) {
+        this.lifts = notes;
     }
 
     public List<DoorDTO> getDoors() {

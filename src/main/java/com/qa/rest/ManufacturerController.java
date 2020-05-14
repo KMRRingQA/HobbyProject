@@ -54,9 +54,4 @@ public class ManufacturerController {
         return ResponseEntity.ok(this.service.updateManufacturer(id, note));
     }
 
-    @PatchMapping("/addNoteToManufacturer/{id}")
-    public ResponseEntity<ManufacturerDTO> addNoteToNotebook(@PathVariable Long id, @RequestBody Note note){
-        return new ResponseEntity<ManufacturerDTO>(this.service.addNoteToManufacturer(id, note), HttpStatus.ACCEPTED);
-    }
-
 }
