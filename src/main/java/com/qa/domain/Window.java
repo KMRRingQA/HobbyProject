@@ -16,7 +16,7 @@ public class Window {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
 //  @JoinColumn(name = "note_book_id")
-    private NoteBook noteBook;
+    private Manufacturer manufacturer;
 
     public Window() {
     }
@@ -50,12 +50,12 @@ public class Window {
         this.description = description;
     }
 
-    public NoteBook getNoteBook() {
-        return noteBook;
+    public Manufacturer getManufacturer() {
+        return manufacturer;
     }
 
-    public void setNoteBook(NoteBook noteBook) {
-        this.noteBook = noteBook;
+    public void setManufacturer(Manufacturer manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
     @Override

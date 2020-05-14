@@ -6,5 +6,5 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import javax.persistence.EntityNotFoundException;
 
 @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "The notebook doesn't exist")
-public class NoteBookNotFoundException extends EntityNotFoundException {
+public class ManufacturerNotFoundException extends EntityNotFoundException {
 }

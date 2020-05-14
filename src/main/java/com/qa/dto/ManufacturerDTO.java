@@ -3,17 +3,17 @@ package com.qa.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NoteBookDTO {
+public class ManufacturerDTO {
 
     private Long id;
     private String name;
     private List<NoteDTO> notes = new ArrayList<>();
     private List<DoorDTO> doors = new ArrayList<>();
 
-    public NoteBookDTO() {
+    public ManufacturerDTO() {
     }
 
-    public NoteBookDTO(String name) {
+    public ManufacturerDTO(String name) {
         super();
         this.name = name;
     }

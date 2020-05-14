@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class NoteBook {
+public class Manufacturer {
 
     @Id
     @GeneratedValue
@@ -13,16 +13,16 @@ public class NoteBook {
 
     private String name;
 
-    @OneToMany(mappedBy = "noteBook", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "manufacturer", fetch = FetchType.LAZY)
     private List<Note> notes = new ArrayList<>();
 
-    @OneToMany(mappedBy = "noteBook", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "manufacturer", fetch = FetchType.LAZY)
     private List<Door> doors = new ArrayList<>();
 
-    public NoteBook() {
+    public Manufacturer() {
     }
 
-    public NoteBook(String name) {
+    public Manufacturer(String name) {
         this.name = name;
     }
 

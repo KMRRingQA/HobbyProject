@@ -1,13 +1,13 @@
 package com.qa.dto;
 
-import com.qa.domain.NoteBook;
+import com.qa.domain.Manufacturer;
 
 public class WindowDTO {
 
     private Long id;
     private String title;
     private String description;
-    private NoteBook noteBook;
+    private Manufacturer manufacturer;
 
     public WindowDTO() {
     }
@@ -41,12 +41,12 @@ public class WindowDTO {
         this.description = description;
     }
 
-    public void setNoteBook(NoteBook noteBook) {
-        this.noteBook = noteBook;
+    public void setManufacturer(Manufacturer manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
-    public String getNoteBook() {
-        return noteBook.getName();
+    public String getManufacturer() {
+        return manufacturer.getName();
     }
 
     @Override
