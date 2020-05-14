@@ -1,10 +1,10 @@
 package com.qa.repo;
 
-import com.qa.domain.Note;
+import com.qa.domain.Lift;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface NotesRepository extends JpaRepository<Note, Long> {
+public interface LiftsRepository extends JpaRepository<Lift, Long> {
 
 }

@@ -1,26 +1,18 @@
-package com.qa.domain;
+package com.qa.dto;
 
-import javax.persistence.*;
-import java.util.Objects;
+import com.qa.domain.Manufacturer;
 
-@Entity
-public class Note {
+public class LiftDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String title;
     private String description;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//  @JoinColumn(name = "note_book_id")
     private Manufacturer manufacturer;
 
-    public Note() {
+    public LiftDTO() {
     }
 
-    public Note(String title, String description) {
+    public LiftDTO(String title, String description) {
         this.title = title;
         this.description = description;
     }
@@ -49,12 +41,12 @@ public class Note {
         this.description = description;
     }
 
-    public Manufacturer getManufacturer() {
-        return manufacturer;
-    }
-
     public void setManufacturer(Manufacturer manufacturer) {
         this.manufacturer = manufacturer;
+    }
+
+    public String getManufacturer() {
+        return manufacturer.getName();
     }
 
     @Override
@@ -65,7 +57,7 @@ public class Note {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Note other = (Note) obj;
+        LiftDTO other = (LiftDTO) obj;
         if (description == null) {
             if (other.description != null)
                 return false;
@@ -82,11 +74,6 @@ public class Note {
         } else if (!title.equals(other.title))
             return false;
         return true;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title, description);
     }
 
 }
