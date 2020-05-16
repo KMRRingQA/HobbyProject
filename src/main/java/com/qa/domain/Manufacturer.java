@@ -49,16 +49,16 @@ public class Manufacturer {
         return windows;
     }
 
-    public void setWindows(List<Window> notes) {
-        this.windows = notes;
+    public void setWindows(List<Window> windows) {
+        this.windows = windows;
     }
 
     public List<Lift> getLifts() {
         return lifts;
     }
 
-    public void setLifts(List<Lift> notes) {
-        this.lifts = notes;
+    public void setLifts(List<Lift> lifts) {
+        this.lifts = lifts;
     }
 
     public List<Door> getDoors() {
