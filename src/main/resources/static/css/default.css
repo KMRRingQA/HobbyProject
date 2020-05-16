@@ -7,7 +7,7 @@
 	{
 		margin: 0px;
 		padding: 0px;
-		background: #2372DE url(images/bg01.png) repeat;
+		background: #2372DE url(../images/bg01.png) repeat;
 		font-family: 'Open Sans', sans-serif;
 		font-size: 11pt;
 		font-weight: 300;
@@ -228,7 +228,7 @@
 	{
 		display: inline-block;
 		padding: 1em 3em;
-		background: #2372DE url(images/bg01.png);
+		background: #2372DE url(../images/bg01.png);
 		-moz-transition: opacity 0.25s ease-in-out;
 		-webkit-transition: opacity 0.25s ease-in-out;
 		-o-transition: opacity 0.25s ease-in-out;
