@@ -1,5 +1,8 @@
 package com.qa.dto;
 
+import com.qa.domain.Lift;
+import com.qa.domain.Window;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +12,7 @@ public class ManufacturerDTO {
     private String name;
     private List<LiftDTO> lifts = new ArrayList<>();
     private List<DoorDTO> doors = new ArrayList<>();
+    private List<WindowDTO> windows = new ArrayList<>();
 
     public ManufacturerDTO() {
     }
@@ -48,6 +52,14 @@ public class ManufacturerDTO {
 
     public void setDoors(List<DoorDTO> doors) {
         this.doors = doors;
+    }
+
+    public List<WindowDTO> getWindows() {
+        return windows;
+    }
+
+    public void setWindows(List<WindowDTO> windows) {
+        this.windows = windows;
     }
 
 }

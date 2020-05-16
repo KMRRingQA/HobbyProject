@@ -19,6 +19,9 @@ public class Manufacturer {
     @OneToMany(mappedBy = "manufacturer", fetch = FetchType.LAZY)
     private List<Door> doors = new ArrayList<>();
 
+    @OneToMany(mappedBy = "manufacturer", fetch = FetchType.LAZY)
+    private List<Window> windows = new ArrayList<>();
+
     public Manufacturer() {
     }
 
@@ -42,11 +45,19 @@ public class Manufacturer {
         this.name = name;
     }
 
-    public List<Lift> getNotes() {
+    public List<Window> getWindows() {
+        return windows;
+    }
+
+    public void setWindows(List<Window> notes) {
+        this.windows = notes;
+    }
+
+    public List<Lift> getLifts() {
         return lifts;
     }
 
-    public void setNotes(List<Lift> notes) {
+    public void setLifts(List<Lift> notes) {
         this.lifts = notes;
     }
 
