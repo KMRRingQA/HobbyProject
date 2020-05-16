@@ -38,11 +38,11 @@ public class ManufacturerDTO {
         this.name = name;
     }
 
-    public List<LiftDTO> getNotes() {
+    public List<LiftDTO> getLifts() {
         return lifts;
     }
 
-    public void setNotes(List<LiftDTO> lifts) {this.lifts = lifts;
+    public void setLifts(List<LiftDTO> lifts) {this.lifts = lifts;
     }
 
     public List<DoorDTO> getDoors() {
