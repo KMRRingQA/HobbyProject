@@ -11,7 +11,7 @@
   <name>SpringNotes</name>
   <packaging>jar</packaging>
 
-  <properties>
+   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
@@ -64,21 +64,7 @@
       <scope>runtime</scope>
     </dependency>
 
-
   </dependencies>
-
-  <distributionManagement>
-    <repository>
-      <id>nexus</id>
-      <name>Releases</name>
-      <url>http://34.105.244.19:8081/repository/maven-releases/</url>
-    </repository>
-    <snapshotRepository>
-      <id>nexus</id>
-      <name>Snapshots</name>
-      <url>http://34.105.244.19:8081/repository/maven-snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
 
   <build>
     <finalName>${project.artifactId}</finalName>
@@ -164,6 +150,4 @@
 
     </plugins>
   </build>
-
-
 </project>
