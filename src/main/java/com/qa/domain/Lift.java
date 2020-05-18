@@ -10,25 +10,41 @@ public class Lift {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String title;
     private String description;
-
     private Integer carryCapacity;
     private Integer maxSpeed;
     private String dimensions;
     private BigDecimal cost;
-
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//  @JoinColumn(name = "lift_book_id")
     private Manufacturer manufacturer;
 
-    public Lift() {
+    public Lift(){
     }
 
-    public Lift(String title, String description) {
+    public String getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(String dimensions) {
+        this.dimensions = dimensions;
+    }
+
+    public BigDecimal getCost() {
+        return cost;
+    }
+
+    public void setCost(BigDecimal cost) {
+        this.cost = cost;
+    }
+
+    public Lift(String title, String description, Integer carryCapacity, Integer maxSpeed, String dimensions, BigDecimal cost) {
         this.title = title;
         this.description = description;
+        this.carryCapacity = carryCapacity;
+        this.maxSpeed = maxSpeed;
+        this.dimensions = dimensions;
+        this.cost = cost;
     }
 
     public Long getId() {
@@ -45,6 +61,14 @@ public class Lift {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Integer getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(Integer maxSpeed) {
+        this.maxSpeed = maxSpeed;
     }
 
     public String getDescription() {

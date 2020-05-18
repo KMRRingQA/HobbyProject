@@ -45,15 +45,15 @@ public class LiftServiceUnitTest {
         return this.mapper.map(lift, LiftDTO.class);
     }
 
-    @Before
-    public void setUp(){
-        this.liftList = new ArrayList<>();
-        this.testLift = new Lift("Shopping list", "Beer and even more beer");
-        this.liftList.add(testLift);
-        this.testLiftWithID = new Lift(testLift.getTitle(), testLift.getDescription());
-        this.testLiftWithID.setId(id);
-        this.liftDTO = this.mapToDTO(testLiftWithID);
-    }
+//    @Before
+//    public void setUp(){
+//        this.liftList = new ArrayList<>();
+//        this.testLift = new Lift("Shopping list", "Beer and even more beer");
+//        this.liftList.add(testLift);
+//        this.testLiftWithID = new Lift(testLift.getTitle(), testLift.getDescription());
+//        this.testLiftWithID.setId(id);
+//        this.liftDTO = this.mapToDTO(testLiftWithID);
+//    }
 
     @Test
     public void getAllLiftsTest(){

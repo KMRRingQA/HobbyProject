@@ -53,14 +53,14 @@ public class LiftsControllerIntegrationTest {
         return this.mapper.map(lift, LiftDTO.class);
     }
 
-    @Before
-    public void setUp(){
-        this.repository.deleteAll();
-        this.testLift = new Lift("test lift", "test description");
-        this.testLiftWithID = this.repository.save(testLift);
-        this.id = testLiftWithID.getId();
-        this.liftDTO = this.mapToDTO(testLiftWithID);
-    }
+//    @Before
+//    public void setUp(){
+//        this.repository.deleteAll();
+//        this.testLift = new Lift("test lift", "test description");
+//        this.testLiftWithID = this.repository.save(testLift);
+//        this.id = testLiftWithID.getId();
+//        this.liftDTO = this.mapToDTO(testLiftWithID);
+//    }
 
     @Test
     public void getAllLiftsTest() throws Exception {

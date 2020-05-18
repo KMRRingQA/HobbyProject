@@ -20,9 +20,37 @@ public class LiftDTO {
     public LiftDTO() {
     }
 
-    public LiftDTO(String title, String description) {
+    public LiftDTO(String title, String description, Integer carryCapacity, Integer maxSpeed, String dimensions, BigDecimal cost) {
         this.title = title;
         this.description = description;
+        this.carryCapacity = carryCapacity;
+        this.maxSpeed = maxSpeed;
+        this.dimensions = dimensions;
+        this.cost = cost;
+    }
+
+    public Integer getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(Integer maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    public String getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(String dimensions) {
+        this.dimensions = dimensions;
+    }
+
+    public BigDecimal getCost() {
+        return cost;
+    }
+
+    public void setCost(BigDecimal cost) {
+        this.cost = cost;
     }
 
     public Long getId() {

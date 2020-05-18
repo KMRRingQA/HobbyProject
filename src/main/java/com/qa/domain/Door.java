@@ -10,16 +10,12 @@ public class Door {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-
     private String title;
     private String description;
-
     private String bwf;
     private String thermalResistance;
     private String dimensions;
     private BigDecimal cost;
-
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Manufacturer manufacturer;
 

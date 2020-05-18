@@ -20,6 +20,24 @@ function getAllDoors() {
     REQ.send();
 }
 
+function getAllLifts() {
+    REQ.onload = () => {
+        if (REQ.status === 200) {
+            console.log(REQ.response);
+            // let data = JSON.stringify(REQ.response);
+            // makeTable(REQ.response);
+            SortController(REQ.response);
+        } else {
+            console.log('handle error');
+        }
+    }
+    REQ.open('GET', 'http://localhost:8181/getAllLifts');
+    REQ.setRequestHeader('Content-Type', 'Application/json');
+    REQ.setRequestHeader('Access-Control-Allow-Origin', '*');
+    REQ.responseType = "json";
+    REQ.send();
+}
+
 function append_json_door(data){
     let table = document.getElementById('table');
 
@@ -168,7 +186,7 @@ function Controller() {
     } else if (category.value==="Items"){
         console.log("getAllItems");
     } else {
-        console.log("getAllLifts");
+        getAllLifts();
     }
 }
 

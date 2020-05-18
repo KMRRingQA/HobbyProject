@@ -39,12 +39,12 @@ public class LiftServiceIntegrationTest {
         return this.mapper.map(lift, LiftDTO.class);
     }
 
-    @Before
-    public void setUp(){
-        this.testLift = new Lift("My title", "my description");
-        this.repository.deleteAll();
-        this.testLiftWithID = this.repository.save(this.testLift);
-    }
+//    @Before
+//    public void setUp(){
+//        this.testLift = new Lift("My title", "my description");
+//        this.repository.deleteAll();
+//        this.testLiftWithID = this.repository.save(this.testLift);
+//    }
 
     @Test
     public void readLiftsTest(){
