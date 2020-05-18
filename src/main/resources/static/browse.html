@@ -50,16 +50,20 @@
 	<div id="banner-wrapper">
 		<div id="banner" class="container">
 			<div class="box-left">
-				<h2>filters go here</h2>
-
-				<div class="dropdown">
-					<select name="item" class="dropdown-select">
-						<option value="">Select…</option>
-						<option value="1">Door</option>
-						<option value="2">Windows</option>
-						<option value="3">Lifts</option>
-					</select>
-				</div>
+				<h4>Select Item Category</h4>
+				<select id="select_item" name="select_item">
+					<option value="Doors">Doors</option>
+					<option value="Items">Items</option>
+					<option value="Lifts">Lifts</option>
+				</select>
+				<h4>Sort By...</h4>
+				<select id="select_sort" name="select_sort">
+					<option value="Cost">Price</option>
+					<option value="Dimensions">Dimensions</option>
+					<option value="U_Value">U-Value</option>
+				</select>
+				<h4>Custom Filter</h4>
+				<input type="text" name="search" placeholder="Search..">
 
 			</div>
 			<div class="box-right"> <button id="search" class="button button-big">search</button></div>
