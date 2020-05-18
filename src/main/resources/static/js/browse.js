@@ -112,9 +112,35 @@ function append_json_door(data){
             '</div>'
     }
     data.forEach(function(object) {
+        let customFilter = document.getElementById('custom_filter');
         let record = document.createElement('div');
         record.className="row";
         record.id="record";
+
+        if (customFilter.value.split(":")[0]==="Manufacturer"){
+            if (customFilter.value.split(":")[1]!==object.manufacturer){
+                return;
+            }
+        }
+
+        if (customFilter.value.split(":")[0]==="MaxPrice"){
+            if (customFilter.value.split(":")[1]>=object.cost){
+                return;
+            }
+        }
+
+        if (customFilter.value.split(":")[0]==="MinBWF"){
+            if (parseInt(customFilter.value.split(":FWD")[1])>parseInt(object.bwf.substring(3,5))){
+                return;
+            }
+        }
+
+        if (customFilter.value.split(":")[0]==="Style"){
+            if (customFilter.value.split(":")[1]!==object.description){
+                return;
+            }
+        }
+
         if (category.value==="Doors" || category.value==="Windows") {
             record.innerHTML = '<div class="cell" data-title="Name">' +
                 object.title +
