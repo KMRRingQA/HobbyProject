@@ -124,7 +124,7 @@ function append_json_door(data){
         }
 
         if (customFilter.value.split(":")[0]==="MaxPrice"){
-            if (customFilter.value.split(":")[1]>=object.cost){
+            if (customFilter.value.split(":")[1]<object.cost){
                 return;
             }
         }
@@ -136,6 +136,12 @@ function append_json_door(data){
         }
 
         if (customFilter.value.split(":")[0]==="Style"){
+            if (customFilter.value.split(":")[1]!==object.description){
+                return;
+            }
+        }
+
+        if (customFilter.value.split(":")[0]==="Type"){
             if (customFilter.value.split(":")[1]!==object.description){
                 return;
             }
