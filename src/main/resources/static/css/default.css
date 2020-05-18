@@ -597,3 +597,27 @@
 		padding: 16px 20px;
 		background-color: #8FA1FA;
 	}
+
+	input[type=password] {
+		width: 100%;
+		box-sizing: border-box;
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		font-size: 16px;
+		background-position: 10px 10px;
+		background-repeat: no-repeat;
+		padding: 16px 20px;
+		background-color: #8FA1FA;
+	}
+
+	input[type=email] {
+		width: 100%;
+		box-sizing: border-box;
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		font-size: 16px;
+		background-position: 10px 10px;
+		background-repeat: no-repeat;
+		padding: 16px 20px;
+		background-color: #8FA1FA;
+	}
