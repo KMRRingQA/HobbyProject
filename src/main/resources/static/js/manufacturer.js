@@ -9,6 +9,7 @@ let workSpace = document.getElementById("window")
 
 function register_man(){
     workSpace.innerHTML=
+        '<div class="container-table100">'+
         '<div>'+
         '<legend>Register a manufacturer</legend>'+
         '<label for="username">Username:</label>'+
@@ -17,13 +18,16 @@ function register_man(){
         '<input id="email" name="email" type="email" />'+
         '<label for="password">Password:</label>'+
         '<input id="password" name="password" type="password" />'+
+        '<br>'+
         '<button class="button" id="butt1" type="submit">Submit</button>' +
+        '</div>'+
         '</div>';
 }
 
 function updateCreate() {
     if (document.getElementById("Item_Category").value==="Door"){
         workSpace.innerHTML=
+            '<div class="container-table100">'+
             '<div>'+
             '<label for="Manufacturer">Manufacturer:</label>'+
             '<input id="Manufacturer" name="Manufacturer" type="text" />'+
@@ -41,10 +45,13 @@ function updateCreate() {
             '<input id="dimensions" name="dimensions" type="text" />'+
             '<label for="cost">Price: (£)</label>'+
             '<input id="cost" name="cost" type="text" />'+
+            '<br>'+
             '<button class="button" id="butt1" type="submit">Submit</button>' +
+            '</div>'+
             '</div>';
     } else if (document.getElementById("Item_Category").value==="Lift"){
         workSpace.innerHTML=
+            '<div class="container-table100">'+
             '<div>'+
             '<label for="Manufacturer">Manufacturer:</label>'+
             '<input id="Manufacturer" name="Manufacturer" type="text" />'+
@@ -62,10 +69,13 @@ function updateCreate() {
             '<input id="dimensions" name="dimensions" type="text" />'+
             '<label for="cost">Price: (£)</label>'+
             '<input id="cost" name="cost" type="text" />'+
+            '<br>'+
             '<button class="button" id="butt1" type="submit">Submit</button>' +
+            '</div>'+
             '</div>';
     } else {
         workSpace.innerHTML=
+            '<div class="container-table100">'+
             '<div>'+
             '<label for="Manufacturer">Manufacturer:</label>'+
             '<input id="Manufacturer" name="Manufacturer" type="text" />'+
@@ -83,13 +93,17 @@ function updateCreate() {
             '<input id="dimensions" name="dimensions" type="text" />'+
             '<label for="cost">Price: (£)</label>'+
             '<input id="cost" name="cost" type="text" />'+
+            '<br>'+
             '<button class="button" id="butt1" type="submit">Submit</button>' +
+            '</div>'+
             '</div>';
     }
 }
 
 function create_item() {
-    workSpace.innerHTML = '<div>' +
+    workSpace.innerHTML =
+        '<div class="container-table100">'+
+        '<div>' +
         '<select id="Item_Category" name="Item_Category">' +
         '<option value="Select Item">Select Item</option>' +
         '<option value="Window">Window</option>' +
@@ -107,7 +121,9 @@ function update_item(){
 
 
 function delete_item(){
-    workSpace.innerHTML = '<div>' +
+    workSpace.innerHTML =
+        '<div class="container-table100">'+
+        '<div>' +
         '<select id="Item_Category" name="Item_Category">' +
         '<option value="Select Item">Select Item Category</option>' +
         '<option value="Window">Window</option>' +
@@ -120,6 +136,9 @@ function delete_item(){
         '<input id="password" name="password" type="password" />'+
         '<label for="ID">Model ID:</label>'+
         '<input id="ID" name="ID" type="text" />'+
+        '<br>'+
+        '<button class="button" id="butt1" type="submit">Submit</button>' +
+        '</div>'+
         '<div>';
 }
 
