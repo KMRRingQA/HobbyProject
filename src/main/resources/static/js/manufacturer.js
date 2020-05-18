@@ -1,18 +1,27 @@
 
-let registerSection = document.getElementById("register")
 let registerButton = document.getElementById("RegisterButton")
-let createSection = document.getElementById("create_item")
 let createButton = document.getElementById("CreateButton")
-let readSection = document.getElementById("show_items")
 let readButton = document.getElementById("ShowButton")
-let updateSection = document.getElementById("update_item")
 let updateButton = document.getElementById("UpdateButton")
-let deleteSection = document.getElementById("delete_item")
 let deleteButton = document.getElementById("DeleteButton")
 
+let workSpace = document.getElementById("window")
 
 function register_man(){
-
+    workSpace.innerHTML=
+    '<div>'+
+        '<legend>Register a manufacturer</legend>'+
+        '<label for="username">Username:</label>'+
+        '<input id="username" name="username" type="text" />'+
+            '<br>'+
+            '<label for="email">E-mail:</label>'+
+        '<input id="email" name="email" type="email" />'+
+            '<br>'+
+            '<label for="password">Password:</label>'+
+        '<input id="password" name="password" type="password" />'+
+            '<br>'+
+            '<button class="button" id="butt1" type="submit">Submit</button>'+
+    '</div>'
 }
 function create_item(){
     hideAll();
