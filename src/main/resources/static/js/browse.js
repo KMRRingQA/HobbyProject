@@ -38,11 +38,29 @@ function getAllLifts() {
     REQ.send();
 }
 
+function getAllWindows() {
+    REQ.onload = () => {
+        if (REQ.status === 200) {
+            console.log(REQ.response);
+            // let data = JSON.stringify(REQ.response);
+            // makeTable(REQ.response);
+            SortController(REQ.response);
+        } else {
+            console.log('handle error');
+        }
+    }
+    REQ.open('GET', 'http://localhost:8181/getAllWindows');
+    REQ.setRequestHeader('Content-Type', 'Application/json');
+    REQ.setRequestHeader('Access-Control-Allow-Origin', '*');
+    REQ.responseType = "json";
+    REQ.send();
+}
+
 function append_json_door(data){
     let table = document.getElementById('table');
 
     let category = document.getElementById('select_item');
-    if (category.value==="Doors"){
+    if (category.value==="Doors" || category.value==="Windows"){
         table.innerHTML=
         '<div class="row header">'+
             '<div class="cell">'+
@@ -67,8 +85,6 @@ function append_json_door(data){
                 'price⠀⠀ (£)'+
             '</div>'+
         '</div>'
-    } else if (category.value==="Items"){
-        table.innerHTML=''
     } else {
         table.innerHTML=
             '<div class="row header">'+
@@ -99,7 +115,7 @@ function append_json_door(data){
         let record = document.createElement('div');
         record.className="row";
         record.id="record";
-        if (category.value==="Doors") {
+        if (category.value==="Doors" || category.value==="Windows") {
             record.innerHTML = '<div class="cell" data-title="Name">' +
                 object.title +
                 '</div>' +
@@ -183,8 +199,8 @@ function Controller() {
     let category = document.getElementById('select_item');
     if (category.value==="Doors"){
         getAllDoors();
-    } else if (category.value==="Items"){
-        console.log("getAllItems");
+    } else if (category.value==="Windows"){
+        getAllWindows();
     } else {
         getAllLifts();
     }

@@ -1,6 +1,7 @@
 package com.qa.domain;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
@@ -13,7 +14,10 @@ public class Window {
 
     private String title;
     private String description;
-
+    private String bwf;
+    private String thermalResistance;
+    private String dimensions;
+    private BigDecimal cost;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
 //  @JoinColumn(name = "note_book_id")
     private Manufacturer manufacturer;
@@ -21,9 +25,13 @@ public class Window {
     public Window() {
     }
 
-    public Window(String title, String description) {
+    public Window(String title, String description, String bwf, String thermalResistance, String dimensions, BigDecimal cost) {
         this.title = title;
         this.description = description;
+        this.bwf = bwf;
+        this.thermalResistance = thermalResistance;
+        this.dimensions = dimensions;
+        this.cost = cost;
     }
 
     public Long getId() {
@@ -59,35 +67,54 @@ public class Window {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Window other = (Window) obj;
-        if (description == null) {
-            if (other.description != null)
-                return false;
-        } else if (!description.equals(other.description))
-            return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (title == null) {
-            if (other.title != null)
-                return false;
-        } else if (!title.equals(other.title))
-            return false;
-        return true;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Window window = (Window) o;
+        return Objects.equals(id, window.id) &&
+                Objects.equals(title, window.title) &&
+                Objects.equals(description, window.description) &&
+                Objects.equals(bwf, window.bwf) &&
+                Objects.equals(thermalResistance, window.thermalResistance) &&
+                Objects.equals(dimensions, window.dimensions) &&
+                Objects.equals(cost, window.cost) &&
+                Objects.equals(manufacturer, window.manufacturer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description);
+        return Objects.hash(id, title, description, bwf, thermalResistance, dimensions, cost, manufacturer);
     }
 
+    public String getBwf() {
+        return bwf;
+    }
+
+    public void setBwf(String bwf) {
+        this.bwf = bwf;
+    }
+
+    public String getThermalResistance() {
+        return thermalResistance;
+    }
+
+    public void setThermalResistance(String thermalResistance) {
+        this.thermalResistance = thermalResistance;
+    }
+
+    public String getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(String dimensions) {
+        this.dimensions = dimensions;
+    }
+
+    public BigDecimal getCost() {
+        return cost;
+    }
+
+    public void setCost(BigDecimal cost) {
+        this.cost = cost;
+    }
 }
