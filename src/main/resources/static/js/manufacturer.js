@@ -9,6 +9,7 @@ let workSpace = document.getElementById("window")
 
 function register_man(){
     workSpace.innerHTML=
+        '<div>'+
         '<legend>Register a manufacturer</legend>'+
         '<label for="username">Username:</label>'+
         '<input id="username" name="username" type="text" />'+
@@ -17,7 +18,7 @@ function register_man(){
         '<label for="password">Password:</label>'+
         '<input id="password" name="password" type="password" />'+
         '<button class="button" id="butt1" type="submit">Submit</button>' +
-        '<div>'
+        '</div>';
 }
 
 function updateCreate() {
@@ -117,8 +118,8 @@ function delete_item(){
         '<input id="Manufacturer" name="Manufacturer" type="text" />'+
         '<label for="password">Password:</label>'+
         '<input id="password" name="password" type="password" />'+
-        '<label for="modelName">Model Name:</label>'+
-        '<input id="modelName" name="modelName" type="text" />'+
+        '<label for="ID">Model ID:</label>'+
+        '<input id="ID" name="ID" type="text" />'+
         '<div>';
 }
 

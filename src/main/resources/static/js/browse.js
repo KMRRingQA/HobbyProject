@@ -64,6 +64,9 @@ function append_json_door(data){
         table.innerHTML=
         '<div class="row header">'+
             '<div class="cell">'+
+                'ID'+
+            '</div>'+
+            '<div class="cell">'+
                 'Name'+
             '</div>'+
             '<div class="cell">'+
@@ -73,7 +76,7 @@ function append_json_door(data){
                 'Manufacturer'+
             '</div>'+
             '<div class="cell">'+
-                'BWF⠀rating'+
+                'BWF rating⠀⠀⠀'+
             '</div>'+
             '<div class="cell">'+
                 'U⠀Value⠀⠀ (m<sup>2</sup>K)'+
@@ -88,6 +91,9 @@ function append_json_door(data){
     } else {
         table.innerHTML=
             '<div class="row header">'+
+            '<div class="cell">'+
+            'ID'+
+            '</div>'+
             '<div class="cell">'+
             'Name'+
             '</div>'+
@@ -148,7 +154,11 @@ function append_json_door(data){
         }
 
         if (category.value==="Doors" || category.value==="Windows") {
-            record.innerHTML = '<div class="cell" data-title="Name">' +
+            record.innerHTML =
+                '<div class="cell" data-title="ID">' +
+                object.id +
+                '</div>' +
+                '<div class="cell" data-title="Title">' +
                 object.title +
                 '</div>' +
                 '<div class="cell" data-title="Style">' +
@@ -171,7 +181,11 @@ function append_json_door(data){
                 '</div>'
             table.appendChild(record);
         } else if (category.value==="Lifts") {
-            record.innerHTML = '<div class="cell" data-title="Name">' +
+            record.innerHTML =
+                '<div class="cell" data-title="ID">' +
+                object.id +
+                '</div>' +
+                '<div class="cell" data-title="Name">' +
                 object.title +
                 '</div>' +
                 '<div class="cell" data-title="Style">' +
