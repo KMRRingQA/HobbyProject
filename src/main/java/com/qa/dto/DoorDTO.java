@@ -2,6 +2,9 @@ package com.qa.dto;
 
 import com.qa.domain.Manufacturer;
 
+import java.math.BigDecimal;
+import java.util.Objects;
+
 public class DoorDTO {
 
     private Long id;
@@ -9,12 +12,49 @@ public class DoorDTO {
     private String description;
     private Manufacturer manufacturer;
 
+    private String bwf;
+    private String thermalResistance;
+    private String dimensions;
+    private BigDecimal cost;
+
     public DoorDTO() {
     }
 
     public DoorDTO(String title, String description) {
         this.title = title;
         this.description = description;
+    }
+
+    public String getBwf() {
+        return bwf;
+    }
+
+    public void setBwf(String bwf) {
+        this.bwf = bwf;
+    }
+
+    public String getThermalResistance() {
+        return thermalResistance;
+    }
+
+    public void setThermalResistance(String thermalResistance) {
+        this.thermalResistance = thermalResistance;
+    }
+
+    public String getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(String dimensions) {
+        this.dimensions = dimensions;
+    }
+
+    public BigDecimal getCost() {
+        return cost;
+    }
+
+    public void setCost(BigDecimal cost) {
+        this.cost = cost;
     }
 
     public Long getId() {
@@ -50,30 +90,22 @@ public class DoorDTO {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        DoorDTO other = (DoorDTO) obj;
-        if (description == null) {
-            if (other.description != null)
-                return false;
-        } else if (!description.equals(other.description))
-            return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (title == null) {
-            if (other.title != null)
-                return false;
-        } else if (!title.equals(other.title))
-            return false;
-        return true;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DoorDTO doorDTO = (DoorDTO) o;
+        return Objects.equals(id, doorDTO.id) &&
+                Objects.equals(title, doorDTO.title) &&
+                Objects.equals(description, doorDTO.description) &&
+                Objects.equals(manufacturer, doorDTO.manufacturer) &&
+                Objects.equals(bwf, doorDTO.bwf) &&
+                Objects.equals(thermalResistance, doorDTO.thermalResistance) &&
+                Objects.equals(dimensions, doorDTO.dimensions) &&
+                Objects.equals(cost, doorDTO.cost);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, description, manufacturer, bwf, thermalResistance, dimensions, cost);
+    }
 }
