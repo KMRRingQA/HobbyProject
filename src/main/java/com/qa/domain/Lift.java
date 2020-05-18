@@ -1,6 +1,7 @@
 package com.qa.domain;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
@@ -12,6 +13,11 @@ public class Lift {
 
     private String title;
     private String description;
+
+    private Integer carryCapacity;
+    private Integer maxSpeed;
+    private String dimensions;
+    private BigDecimal cost;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
 //  @JoinColumn(name = "lift_book_id")
@@ -58,35 +64,30 @@ public class Lift {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Lift other = (Lift) obj;
-        if (description == null) {
-            if (other.description != null)
-                return false;
-        } else if (!description.equals(other.description))
-            return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (title == null) {
-            if (other.title != null)
-                return false;
-        } else if (!title.equals(other.title))
-            return false;
-        return true;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Lift lift = (Lift) o;
+        return Objects.equals(id, lift.id) &&
+                Objects.equals(title, lift.title) &&
+                Objects.equals(description, lift.description) &&
+                Objects.equals(carryCapacity, lift.carryCapacity) &&
+                Objects.equals(maxSpeed, lift.maxSpeed) &&
+                Objects.equals(dimensions, lift.dimensions) &&
+                Objects.equals(cost, lift.cost) &&
+                Objects.equals(manufacturer, lift.manufacturer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description);
+        return Objects.hash(id, title, description, carryCapacity, maxSpeed, dimensions, cost, manufacturer);
     }
 
+    public Integer getCarryCapacity() {
+        return carryCapacity;
+    }
+
+    public void setCarryCapacity(Integer carryCapacity) {
+        this.carryCapacity = carryCapacity;
+    }
 }

@@ -2,12 +2,20 @@ package com.qa.dto;
 
 import com.qa.domain.Manufacturer;
 
+import java.math.BigDecimal;
+import java.util.Objects;
+
 public class LiftDTO {
 
     private Long id;
     private String title;
     private String description;
     private Manufacturer manufacturer;
+
+    private Integer carryCapacity;
+    private Integer maxSpeed;
+    private String dimensions;
+    private BigDecimal cost;
 
     public LiftDTO() {
     }
@@ -50,30 +58,30 @@ public class LiftDTO {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        LiftDTO other = (LiftDTO) obj;
-        if (description == null) {
-            if (other.description != null)
-                return false;
-        } else if (!description.equals(other.description))
-            return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (title == null) {
-            if (other.title != null)
-                return false;
-        } else if (!title.equals(other.title))
-            return false;
-        return true;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LiftDTO liftDTO = (LiftDTO) o;
+        return Objects.equals(id, liftDTO.id) &&
+                Objects.equals(title, liftDTO.title) &&
+                Objects.equals(description, liftDTO.description) &&
+                Objects.equals(manufacturer, liftDTO.manufacturer) &&
+                Objects.equals(carryCapacity, liftDTO.carryCapacity) &&
+                Objects.equals(maxSpeed, liftDTO.maxSpeed) &&
+                Objects.equals(dimensions, liftDTO.dimensions) &&
+                Objects.equals(cost, liftDTO.cost);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, description, manufacturer, carryCapacity, maxSpeed, dimensions, cost);
+    }
+
+    public Integer getCarryCapacity() {
+        return carryCapacity;
+    }
+
+    public void setCarryCapacity(Integer carryCapacity) {
+        this.carryCapacity = carryCapacity;
+    }
 }
