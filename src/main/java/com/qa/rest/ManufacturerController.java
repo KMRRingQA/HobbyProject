@@ -22,35 +22,35 @@ public class ManufacturerController {
     }
 
     @GetMapping("/getAllManufacturers")
-    public ResponseEntity<List<ManufacturerDTO>> getAllNotes(){
+    public ResponseEntity<List<ManufacturerDTO>> getAllManufacturers(){
         return ResponseEntity.ok(this.service.readManufacturers());
     }
 
     @PostMapping("/createManufacturer")
-    public ResponseEntity<ManufacturerDTO> createNote(@RequestBody Manufacturer note){
-        return new ResponseEntity<ManufacturerDTO>(this.service.createManufacturer(note), HttpStatus.CREATED);
+    public ResponseEntity<ManufacturerDTO> createManufacturer(@RequestBody Manufacturer manufacturer){
+        return new ResponseEntity<ManufacturerDTO>(this.service.createManufacturer(manufacturer), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/deleteManufacturer/{id}")
-    public ResponseEntity<?> deleteNote(@PathVariable Long id){
+    public ResponseEntity<?> deleteManufacturer(@PathVariable Long id){
         return this.service.deleteManufacturer(id)
             ? ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()
             : ResponseEntity.noContent().build();
     }
 
     @GetMapping("/getManufacturerById/{id}")
-    public ResponseEntity<ManufacturerDTO> getNoteById(@PathVariable Long id){
+    public ResponseEntity<ManufacturerDTO> getManufacturerById(@PathVariable Long id){
         return ResponseEntity.ok(this.service.findManufacturerById(id));
     }
 
     @PutMapping("/updateManufacturer/{id}")
-    public ResponseEntity<ManufacturerDTO> updateNote(@PathVariable Long id, @RequestBody Manufacturer note){
-        return ResponseEntity.ok(this.service.updateManufacturer(id, note));
+    public ResponseEntity<ManufacturerDTO> updateManufacturer(@PathVariable Long id, @RequestBody Manufacturer manufacturer){
+        return ResponseEntity.ok(this.service.updateManufacturer(id, manufacturer));
     }
 
     @PutMapping("/updateManufacturer2")
-    public ResponseEntity<ManufacturerDTO> updateNote2(@PathParam("id") Long id, @RequestBody Manufacturer note){
-        return ResponseEntity.ok(this.service.updateManufacturer(id, note));
+    public ResponseEntity<ManufacturerDTO> updateManufacturer2(@PathParam("id") Long id, @RequestBody Manufacturer manufacturer){
+        return ResponseEntity.ok(this.service.updateManufacturer(id, manufacturer));
     }
 
 }
