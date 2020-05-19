@@ -46,10 +46,15 @@ public class WindowService {
 
     public WindowDTO updateWindow(Long id, Window window){
         Window update = this.repo.findById(id).orElseThrow(WindowNotFoundException::new);
+        update.setBwf(window.getBwf());
+        update.setId(id);
         update.setTitle(window.getTitle());
+        update.setDimensions(window.getDimensions());
         update.setDescription(window.getDescription());
-        Window tempWindow = this.repo.save(window);
-        return this.mapToDTO(tempWindow);
+        update.setThermalResistance(window.getThermalResistance());
+        update.setCost(window.getCost());
+        repo.save(window);
+        return this.mapToDTO(window);
     }
 
     public boolean deleteWindow(Long id){

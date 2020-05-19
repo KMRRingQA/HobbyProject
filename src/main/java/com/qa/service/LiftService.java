@@ -47,8 +47,13 @@ public class LiftService {
         Lift update = this.repo.findById(id).orElseThrow(LiftNotFoundException::new);
         update.setTitle(lift.getTitle());
         update.setDescription(lift.getDescription());
-        Lift tempLift = this.repo.save(lift);
-        return this.mapToDTO(tempLift);
+        update.setCarryCapacity(lift.getCarryCapacity());
+        update.setDimensions(lift.getDimensions());
+        update.setCost(lift.getCost());
+        update.setMaxSpeed(lift.getMaxSpeed());
+        update.setId(id);
+        repo.save(lift);
+        return this.mapToDTO(lift);
     }
 
     public boolean deleteLift(Long id){

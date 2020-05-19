@@ -46,10 +46,15 @@ public class DoorService {
 
     public DoorDTO updateDoor(Long id, Door door){
         Door update = this.repo.findById(id).orElseThrow(DoorNotFoundException::new);
+        update.setId(id);
         update.setTitle(door.getTitle());
         update.setDescription(door.getDescription());
-        Door tempDoor = this.repo.save(door);
-        return this.mapToDTO(tempDoor);
+        update.setBwf(door.getBwf());
+        update.setDimensions(door.getDimensions());
+        update.setThermalResistance(door.getThermalResistance());
+        update.setCost(door.getCost());
+        repo.save(door);
+        return this.mapToDTO(door);
     }
 
     public boolean deleteDoor(Long id){
