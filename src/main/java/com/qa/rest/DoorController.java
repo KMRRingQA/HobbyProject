@@ -46,10 +46,5 @@ public class DoorController {
     public ResponseEntity<DoorDTO> updateDoor(@PathVariable Long id, @RequestBody Door door){
         return ResponseEntity.ok(this.service.updateDoor(id, door));
     }
-//
-//    @PutMapping("/updateDoor2")
-//    public ResponseEntity<DoorDTO> updateDoor2(@PathParam("id") Long id, @RequestBody Door door){
-//        return ResponseEntity.ok(this.service.updateDoor(id, door));
-//    }
 
 }

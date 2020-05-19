@@ -48,9 +48,4 @@ public class ManufacturerController {
         return ResponseEntity.ok(this.service.updateManufacturer(id, manufacturer));
     }
 
-    @PutMapping("/updateManufacturer2")
-    public ResponseEntity<ManufacturerDTO> updateManufacturer2(@PathParam("id") Long id, @RequestBody Manufacturer manufacturer){
-        return ResponseEntity.ok(this.service.updateManufacturer(id, manufacturer));
-    }
-
 }

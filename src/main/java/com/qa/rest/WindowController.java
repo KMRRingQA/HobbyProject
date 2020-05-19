@@ -46,10 +46,5 @@ public class WindowController {
     public ResponseEntity<WindowDTO> updateWindow(@PathVariable Long id, @RequestBody Window window){
         return ResponseEntity.ok(this.service.updateWindow(id, window));
     }
-//
-//    @PutMapping("/updateWindow2")
-//    public ResponseEntity<WindowDTO> updateWindow2(@PathParam("id") Long id, @RequestBody Window window){
-//        return ResponseEntity.ok(this.service.updateWindow(id, window));
-//    }
 
 }

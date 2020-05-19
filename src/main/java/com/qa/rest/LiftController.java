@@ -47,10 +47,5 @@ public class LiftController {
     public ResponseEntity<LiftDTO> updateLift(@PathVariable Long id, @RequestBody Lift lift){
         return ResponseEntity.ok(this.service.updateLift(id, lift));
     }
-//
-//    @PutMapping("/updateLift2")
-//    public ResponseEntity<LiftDTO> updateLift2(@PathParam("id") Long id, @RequestBody Lift lift){
-//        return ResponseEntity.ok(this.service.updateLift(id, lift));
-//    }
 
 }

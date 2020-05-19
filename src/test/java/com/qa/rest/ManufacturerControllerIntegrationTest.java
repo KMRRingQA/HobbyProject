@@ -52,7 +52,7 @@ public class ManufacturerControllerIntegrationTest {
     @Test
     public void testCreateManufacturer() throws Exception {
         String result = this.mock
-                .perform(request(HttpMethod.POST, "/manufacturer/createManufacturer").contentType(MediaType.APPLICATION_JSON)
+                .perform(request(HttpMethod.POST, "/createManufacturer").contentType(MediaType.APPLICATION_JSON)
                         .content(this.mapper.writeValueAsString(testManufacturer)).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated()).andReturn().getResponse().getContentAsString();
         assertEquals(this.mapper.writeValueAsString(testManufacturerWithID), result);
@@ -60,13 +60,13 @@ public class ManufacturerControllerIntegrationTest {
 
     @Test
     public void testDeleteManufacturer() throws Exception {
-        this.mock.perform(request(HttpMethod.DELETE, "/manufacturer/deleteManufacturer/" + this.id)).andExpect(status().isNoContent());
+        this.mock.perform(request(HttpMethod.DELETE, "/deleteManufacturer/" + this.id)).andExpect(status().isNoContent());
     }
 
     @Test
     public void testGetManufacturer() throws Exception {
         String content = this.mock
-                .perform(request(HttpMethod.GET, "/manufacturer/get/" + this.id).accept(MediaType.APPLICATION_JSON))
+                .perform(request(HttpMethod.GET, "/getManufacturerById/" + this.id).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk()).andReturn().getResponse().getContentAsString();
 
         assertEquals(this.mapper.writeValueAsString(this.testManufacturer), content);
@@ -77,7 +77,7 @@ public class ManufacturerControllerIntegrationTest {
         List<Manufacturer> manufacturerList = new ArrayList<>();
         manufacturerList.add(this.testManufacturerWithID);
 
-        String content = this.mock.perform(request(HttpMethod.GET, "/manufacturer/getAll").accept(MediaType.APPLICATION_JSON))
+        String content = this.mock.perform(request(HttpMethod.GET, "/getAllManufacturers").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk()).andReturn().getResponse().getContentAsString();
 
         assertEquals(this.mapper.writeValueAsString(manufacturerList), content);
@@ -90,7 +90,7 @@ public class ManufacturerControllerIntegrationTest {
         updatedManufacturer.setId(this.id);
 
         String result = this.mock
-                .perform(request(HttpMethod.PUT, "/manufacturer/updateManufacturer/?id=" + this.id).accept(MediaType.APPLICATION_JSON)
+                .perform(request(HttpMethod.PUT, "/updateManufacturer/?id=" + this.id).accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON).content(this.mapper.writeValueAsString(newManufacturer)))
                 .andExpect(status().isAccepted()).andReturn().getResponse().getContentAsString();
 
