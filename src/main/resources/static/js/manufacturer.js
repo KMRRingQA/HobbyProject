@@ -36,6 +36,7 @@ function create(type) {
         REQ.open('POST', 'http://localhost:8181/createManufacturer');
     } else if (type === "window"){
         Data = `{"title" : "${document.getElementById("modelName").value}","description": "${document.getElementById("type").value}","bwf": "${document.getElementById("bwf").value}", "thermalResistance": "${document.getElementById("thermal").value}", "dimensions": "${document.getElementById("dimensions").value}", "cost": "${document.getElementById("cost").value}", "manufacturer":{"id":"${document.getElementById("manufacturerID").value}"}}`;
+        console.log(Data);
         REQ.open('POST', 'http://localhost:8181/createWindow');
     } else if (type === "lift"){
         Data = `{"title" : "${document.getElementById("modelName").value}","description": "${document.getElementById("type").value}","carryCapacity": "${document.getElementById("carry_capacity").value}", "maxSpeed": "${document.getElementById("maxVel").value}", "dimensions": "${document.getElementById("dimensions").value}", "cost": "${document.getElementById("cost").value}", "manufacturer":{"id":"${document.getElementById("manufacturerID").value}"}}`;
@@ -89,7 +90,7 @@ function updateCreate() {
             '<div class="container-table100">'+
             '<div>'+
             '<label for="Manufacturer">Manufacturer ID:</label>'+
-            '<input id="ManufacturerID" name="Manufacturer" type="text" />'+
+            '<input id="manufacturerID" name="Manufacturer" type="text" />'+
             '<label for="password">Password:</label>'+
             '<input id="password" name="password" type="password" />'+
             '<label for="modelName">Model Name:</label>'+
@@ -114,7 +115,7 @@ function updateCreate() {
             '<div class="container-table100">'+
             '<div>'+
             '<label for="Manufacturer">Manufacturer ID:</label>'+
-            '<input id="ManufacturerID" name="Manufacturer" type="text" />'+
+            '<input id="manufacturerID" name="Manufacturer" type="text" />'+
             '<label for="password">Password:</label>'+
             '<input id="password" name="password" type="password" />'+
             '<label for="modelName">Model Name:</label>'+
