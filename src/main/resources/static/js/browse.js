@@ -1,8 +1,7 @@
 
 const REQ = new XMLHttpRequest();
 
-
-function getAllDoors() {
+function getAll(type) {
     REQ.onload = () => {
         if (REQ.status === 200) {
             console.log(REQ.response);
@@ -11,39 +10,7 @@ function getAllDoors() {
             console.log('handle error');
         }
     }
-    REQ.open('GET', 'http://localhost:8181/getAllDoors');
-    REQ.setRequestHeader('Content-Type', 'Application/json');
-    REQ.setRequestHeader('Access-Control-Allow-Origin', '*');
-    REQ.responseType = "json";
-    REQ.send();
-}
-
-function getAllLifts() {
-    REQ.onload = () => {
-        if (REQ.status === 200) {
-            console.log(REQ.response);
-            SortController(REQ.response);
-        } else {
-            console.log('handle error');
-        }
-    }
-    REQ.open('GET', 'http://localhost:8181/getAllLifts');
-    REQ.setRequestHeader('Content-Type', 'Application/json');
-    REQ.setRequestHeader('Access-Control-Allow-Origin', '*');
-    REQ.responseType = "json";
-    REQ.send();
-}
-
-function getAllWindows() {
-    REQ.onload = () => {
-        if (REQ.status === 200) {
-            console.log(REQ.response);
-            SortController(REQ.response);
-        } else {
-            console.log('handle error');
-        }
-    }
-    REQ.open('GET', 'http://localhost:8181/getAllWindows');
+    REQ.open('GET', 'http://localhost:8181/getAll' + type);
     REQ.setRequestHeader('Content-Type', 'Application/json');
     REQ.setRequestHeader('Access-Control-Allow-Origin', '*');
     REQ.responseType = "json";
@@ -238,11 +205,11 @@ function GetSortOrder(prop) {
 function Controller() {
     let category = document.getElementById('select_item');
     if (category.value==="Doors"){
-        getAllDoors();
+        getAll("Doors");
     } else if (category.value==="Windows"){
-        getAllWindows();
+        getAll("Windows");
     } else {
-        getAllLifts();
+        getAll("Lifts");
     }
 }
 

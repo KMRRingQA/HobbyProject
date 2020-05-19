@@ -2,13 +2,18 @@ package com.qa.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.domain.Door;
+import com.qa.domain.Manufacturer;
+import com.qa.dto.DoorDTO;
 import com.qa.repo.DoorsRepository;
+import com.qa.repo.ManufacturerRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -33,11 +38,19 @@ public class DoorControllerIntegrationTest {
     @Autowired
     private DoorsRepository repo;
 
+    @Autowired
+    private ManufacturerRepository repoManu;
+
     private ObjectMapper mapper = new ObjectMapper();
+
+    @Autowired
+    public ModelMapper modelMapper;
 
     private long id;
 
     private Door testDoor;
+
+    private Manufacturer testManufacturer;
 
     private Door testDoorWithID;
 
@@ -45,6 +58,9 @@ public class DoorControllerIntegrationTest {
     public void init() {
         this.repo.deleteAll();
         this.testDoor = new Door("test", "testStyle", "testBWF", "TestUvalue","testDimension", BigDecimal.valueOf(2.99));
+        this.testManufacturer = new Manufacturer("testName", "test@email.com","testpass");
+        this.testManufacturer = this.repoManu.save(this.testManufacturer);
+        this.testDoor.setManufacturer(testManufacturer);
         this.testDoorWithID = this.repo.save(this.testDoor);
         this.id = this.testDoorWithID.getId();
     }
@@ -55,7 +71,7 @@ public class DoorControllerIntegrationTest {
                 .perform(request(HttpMethod.POST, "/createDoor").contentType(MediaType.APPLICATION_JSON)
                         .content(this.mapper.writeValueAsString(testDoor)).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated()).andReturn().getResponse().getContentAsString();
-        assertEquals(this.mapper.writeValueAsString(testDoorWithID), result);
+        assertEquals(this.mapper.writeValueAsString(modelMapper.map(testDoorWithID, DoorDTO.class)), result);
     }
 
     @Test
