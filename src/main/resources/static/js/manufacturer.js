@@ -34,12 +34,12 @@ function create(type) {
     } else if (type === "manufacturer"){
         Data = `{"name" : "${document.getElementById("username").value}","email": "${document.getElementById("email").value}","password": "${document.getElementById("password").value}"}`;
         REQ.open('POST', 'http://localhost:8181/createManufacturer');
-    } else if (type === "lift"){
-        Data = `{"title" : "${document.getElementById("modelName").value}","description": "${document.getElementById("type").value}","bwf": "${document.getElementById("bwf").value}", "thermalResistance": "${document.getElementById("thermal").value}", "dimensions": "${document.getElementById("dimensions").value}", "cost": "${document.getElementById("cost").value}", "manufacturer":{"id":"${document.getElementById("manufacturerID").value}"}}`;
-        REQ.open('POST', 'http://localhost:8181/createLift');
     } else if (type === "window"){
-        Data = `{"title" : "${document.getElementById("modelName").value}","description": "${document.getElementById("type").value}","carryCapacity": "${document.getElementById("carry_capacity").value}", "maxSpeed": "${document.getElementById("maxVel").value}", "dimensions": "${document.getElementById("dimensions").value}", "cost": "${document.getElementById("cost").value}", "manufacturer":{"id":"${document.getElementById("manufacturerID").value}"}}`;
+        Data = `{"title" : "${document.getElementById("modelName").value}","description": "${document.getElementById("type").value}","bwf": "${document.getElementById("bwf").value}", "thermalResistance": "${document.getElementById("thermal").value}", "dimensions": "${document.getElementById("dimensions").value}", "cost": "${document.getElementById("cost").value}", "manufacturer":{"id":"${document.getElementById("manufacturerID").value}"}}`;
         REQ.open('POST', 'http://localhost:8181/createWindow');
+    } else if (type === "lift"){
+        Data = `{"title" : "${document.getElementById("modelName").value}","description": "${document.getElementById("type").value}","carryCapacity": "${document.getElementById("carry_capacity").value}", "maxSpeed": "${document.getElementById("maxVel").value}", "dimensions": "${document.getElementById("dimensions").value}", "cost": "${document.getElementById("cost").value}", "manufacturer":{"id":"${document.getElementById("manufacturerID").value}"}}`;
+        REQ.open('POST', 'http://localhost:8181/createLift');
     } else {
         console.log('handle error');
     }
