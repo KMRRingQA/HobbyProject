@@ -6,8 +6,6 @@ function getAllDoors() {
     REQ.onload = () => {
         if (REQ.status === 200) {
             console.log(REQ.response);
-            // let data = JSON.stringify(REQ.response);
-            // makeTable(REQ.response);
             SortController(REQ.response);
         } else {
             console.log('handle error');
@@ -24,8 +22,6 @@ function getAllLifts() {
     REQ.onload = () => {
         if (REQ.status === 200) {
             console.log(REQ.response);
-            // let data = JSON.stringify(REQ.response);
-            // makeTable(REQ.response);
             SortController(REQ.response);
         } else {
             console.log('handle error');
@@ -42,8 +38,6 @@ function getAllWindows() {
     REQ.onload = () => {
         if (REQ.status === 200) {
             console.log(REQ.response);
-            // let data = JSON.stringify(REQ.response);
-            // makeTable(REQ.response);
             SortController(REQ.response);
         } else {
             console.log('handle error');
