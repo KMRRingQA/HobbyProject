@@ -48,6 +48,8 @@ public class ManufacturerService {
     public ManufacturerDTO updateManufacturer(Long id, Manufacturer manufacturer){
         Manufacturer update = this.manufacturerRepository.findById(id).orElseThrow(ManufacturerNotFoundException::new);
         update.setName(manufacturer.getName());
+        update.setEmail(manufacturer.getEmail());
+        update.setPassword(manufacturer.getPassword());
         Manufacturer tempManufacturer = this.manufacturerRepository.save(update);
         return this.mapToDTO(tempManufacturer);
     }

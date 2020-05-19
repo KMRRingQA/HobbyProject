@@ -90,9 +90,9 @@ public class ManufacturerControllerIntegrationTest {
         updatedManufacturer.setId(this.id);
 
         String result = this.mock
-                .perform(request(HttpMethod.PUT, "/updateManufacturer/?id=" + this.id).accept(MediaType.APPLICATION_JSON)
+                .perform(request(HttpMethod.PUT, "/updateManufacturer/" + this.id).accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON).content(this.mapper.writeValueAsString(newManufacturer)))
-                .andExpect(status().isAccepted()).andReturn().getResponse().getContentAsString();
+                .andExpect(status().isOk()).andReturn().getResponse().getContentAsString();
 
         assertEquals(this.mapper.writeValueAsString(updatedManufacturer), result);
     }
