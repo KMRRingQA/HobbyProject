@@ -39,8 +39,8 @@ public class AppTest
                 .addSystemInfo("Host Name", "QA")
                 .addSystemInfo("Tester", "Tadas");
         report.loadConfig(new File(System.getProperty("user.dir") + "\\extent-report.xml"));
-        SpringApplication.run(App.class);
-        sleep(10000);
+//        SpringApplication.run(App.class);
+//        sleep(10000);
     }
 
     @BeforeMethod
