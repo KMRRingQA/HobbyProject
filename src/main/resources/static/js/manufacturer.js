@@ -29,11 +29,19 @@ function register_man(){
 function create(type) {
     let Data;
     if (type === "door") {
-    Data = `{"title" : "${document.getElementById("modelName").value}","description": "${document.getElementById("type").value}","bwf": "${document.getElementById("bwf").value}", "thermalResistance": "${document.getElementById("thermal").value}", "dimensions": "${document.getElementById("dimensions").value}", "cost": "${document.getElementById("cost").value}", "manufacturer":{"id":"${document.getElementById("manufacturerID").value}"}}`;
-    REQ.open('POST', 'http://localhost:8181/createDoor');
+        Data = `{"title" : "${document.getElementById("modelName").value}","description": "${document.getElementById("type").value}","bwf": "${document.getElementById("bwf").value}", "thermalResistance": "${document.getElementById("thermal").value}", "dimensions": "${document.getElementById("dimensions").value}", "cost": "${document.getElementById("cost").value}", "manufacturer":{"id":"${document.getElementById("manufacturerID").value}"}}`;
+        REQ.open('POST', 'http://localhost:8181/createDoor');
     } else if (type === "manufacturer"){
-    Data = `{"name" : "${document.getElementById("username").value}","email": "${document.getElementById("email").value}","password": "${document.getElementById("password").value}"}`;
-    REQ.open('POST', 'http://localhost:8181/createManufacturer');
+        Data = `{"name" : "${document.getElementById("username").value}","email": "${document.getElementById("email").value}","password": "${document.getElementById("password").value}"}`;
+        REQ.open('POST', 'http://localhost:8181/createManufacturer');
+    } else if (type === "lift"){
+        Data = `{"title" : "${document.getElementById("modelName").value}","description": "${document.getElementById("type").value}","bwf": "${document.getElementById("bwf").value}", "thermalResistance": "${document.getElementById("thermal").value}", "dimensions": "${document.getElementById("dimensions").value}", "cost": "${document.getElementById("cost").value}", "manufacturer":{"id":"${document.getElementById("manufacturerID").value}"}}`;
+        REQ.open('POST', 'http://localhost:8181/createLift');
+    } else if (type === "window"){
+        Data = `{"title" : "${document.getElementById("modelName").value}","description": "${document.getElementById("type").value}","carryCapacity": "${document.getElementById("carry_capacity").value}", "maxSpeed": "${document.getElementById("maxVel").value}", "dimensions": "${document.getElementById("dimensions").value}", "cost": "${document.getElementById("cost").value}", "manufacturer":{"id":"${document.getElementById("manufacturerID").value}"}}`;
+        REQ.open('POST', 'http://localhost:8181/createWindow');
+    } else {
+        console.log('handle error');
     }
     REQ.setRequestHeader('Content-Type', 'Application/json');
     REQ.setRequestHeader('Access-Control-Allow-Origin', '*');
@@ -49,39 +57,6 @@ function create(type) {
     REQ.send(Data);
 }
 
-function createWindow() {
-    let windowData = `{"name" : "${document.getElementById("username").value}","email": "${document.getElementById("email").value}", "bwf": "${document.getElementById("bwf").value}", "thermalResistance": "${document.getElementById("manufacturer").value}", "dimensions": "${document.getElementById("dimensions").value}", "cost": "${document.getElementById("cost").value}", "manufacturer":{"id":"${document.getElementById("manufacturerID").value}"}`;
-    REQ.open('POST', 'http://localhost:8181/createManufacturer');
-    REQ.setRequestHeader('Content-Type', 'Application/json');
-    REQ.setRequestHeader('Access-Control-Allow-Origin', '*');
-    REQ.responseType = "json";
-    REQ.onload = () => {
-        if (REQ.status === 201) {
-            console.log(REQ.response);
-            console.log("manufacturer created");
-        } else {
-            console.log('handle error');
-        }
-    }
-    REQ.send(windowData);
-}
-
-function createLift() {
-    let liftData = `{"name" : "${document.getElementById("username").value}","email": "${document.getElementById("email").value}","password": "${document.getElementById("password").value}"}`;
-    REQ.open('POST', 'http://localhost:8181/createManufacturer');
-    REQ.setRequestHeader('Content-Type', 'Application/json');
-    REQ.setRequestHeader('Access-Control-Allow-Origin', '*');
-    REQ.responseType = "json";
-    REQ.onload = () => {
-        if (REQ.status === 201) {
-            console.log(REQ.response);
-            console.log("manufacturer created");
-        } else {
-            console.log('handle error');
-        }
-    }
-    REQ.send(liftData);
-}
 
 function updateCreate() {
     if (document.getElementById("Item_Category").value==="Door"){
@@ -113,8 +88,8 @@ function updateCreate() {
         workSpace.innerHTML=
             '<div class="container-table100">'+
             '<div>'+
-            '<label for="Manufacturer">Manufacturer:</label>'+
-            '<input id="Manufacturer" name="Manufacturer" type="text" />'+
+            '<label for="Manufacturer">Manufacturer ID:</label>'+
+            '<input id="ManufacturerID" name="Manufacturer" type="text" />'+
             '<label for="password">Password:</label>'+
             '<input id="password" name="password" type="password" />'+
             '<label for="modelName">Model Name:</label>'+
@@ -130,15 +105,16 @@ function updateCreate() {
             '<label for="cost">Price: (£)</label>'+
             '<input id="cost" name="cost" type="text" />'+
             '<br>'+
-            '<button class="button" id="butt1" type="submit">Submit</button>' +
+            '<button class="button" id="createLiftButton" type="submit">Submit</button>' +
             '</div>'+
             '</div>';
+        document.getElementById("createLiftButton").addEventListener("click",function(){create("lift")});
     } else {
         workSpace.innerHTML=
             '<div class="container-table100">'+
             '<div>'+
-            '<label for="Manufacturer">Manufacturer:</label>'+
-            '<input id="Manufacturer" name="Manufacturer" type="text" />'+
+            '<label for="Manufacturer">Manufacturer ID:</label>'+
+            '<input id="ManufacturerID" name="Manufacturer" type="text" />'+
             '<label for="password">Password:</label>'+
             '<input id="password" name="password" type="password" />'+
             '<label for="modelName">Model Name:</label>'+
@@ -154,9 +130,10 @@ function updateCreate() {
             '<label for="cost">Price: (£)</label>'+
             '<input id="cost" name="cost" type="text" />'+
             '<br>'+
-            '<button class="button" id="butt1" type="submit">Submit</button>' +
+            '<button class="button" id="createWindowButton" type="submit">Submit</button>' +
             '</div>'+
             '</div>';
+        document.getElementById("createWindowButton").addEventListener("click",function(){create("window")});
     }
 }
 
