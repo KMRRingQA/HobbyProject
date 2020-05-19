@@ -1,5 +1,8 @@
 package com.qa.domain;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -18,8 +21,9 @@ public class Window {
     private String thermalResistance;
     private String dimensions;
     private BigDecimal cost;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//  @JoinColumn(name = "note_book_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Manufacturer manufacturer;
 
     public Window() {

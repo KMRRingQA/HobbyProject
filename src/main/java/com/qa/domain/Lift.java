@@ -1,5 +1,8 @@
 package com.qa.domain;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -16,7 +19,9 @@ public class Lift {
     private Integer maxSpeed;
     private String dimensions;
     private BigDecimal cost;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Manufacturer manufacturer;
 
     public Lift(){
