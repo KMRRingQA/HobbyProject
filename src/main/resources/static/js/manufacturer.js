@@ -12,7 +12,7 @@ function register_man(){
         '<div class="container-table100">'+
         '<div>'+
         '<legend>Register a manufacturer</legend>'+
-        '<label for="username">Username:</label>'+
+        '<label for="username">Name:</label>'+
         '<input id="username" name="username" type="text" />'+
         '<label for="email">E-mail:</label>'+
         '<input id="email" name="email" type="email" />'+
