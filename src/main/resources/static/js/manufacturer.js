@@ -169,9 +169,9 @@ function update(type) {
     REQ.setRequestHeader('Access-Control-Allow-Origin', '*');
     REQ.responseType = "json";
     REQ.onload = () => {
-        if (REQ.status === 201) {
+        if (REQ.status === 200) {
             console.log(REQ.response);
-            console.log(`${type} created`);
+            console.log(`${type} updated`);
         } else {
             console.log('handle error');
         }
@@ -279,6 +279,28 @@ function update_item(){
     document.getElementById("Item_Category").addEventListener("change", updateUpdate)
 }
 
+function deleteItem(type) {
+    if (type === "door") {
+        REQ.open('DELETE', `http://localhost:8181/deleteDoor/${document.getElementById("ID").value}`);
+    } else if (type === "window"){
+        REQ.open('DELETE', `http://localhost:8181/deleteWindow/${document.getElementById("ID").value}`);
+    } else if (type === "lift"){
+        REQ.open('DELETE', `http://localhost:8181/deleteLift/${document.getElementById("ID").value}`);
+    } else {
+        console.log('handle error');
+    }
+    REQ.setRequestHeader('Content-Type', 'Application/json');
+    REQ.setRequestHeader('Access-Control-Allow-Origin', '*');
+    REQ.responseType = "json";
+    REQ.onload = () => {
+        if (REQ.status === 204) {
+            console.log(`${type} deleted`);
+        } else {
+            console.log('handle error');
+        }
+    }
+    REQ.send();
+}
 
 function delete_item(){
     workSpace.innerHTML =
@@ -286,20 +308,21 @@ function delete_item(){
         '<div>' +
         '<select id="Item_Category" name="Item_Category">' +
         '<option value="Select Item">Select Item Category</option>' +
-        '<option value="Window">Window</option>' +
-        '<option value="Door">Door</option>' +
-        '<option value="Lift">Lift</option>' +
+        '<option value="window">Window</option>' +
+        '<option value="door">Door</option>' +
+        '<option value="lift">Lift</option>' +
         '</select>'+
         '<label for="Manufacturer">Manufacturer:</label>'+
         '<input id="Manufacturer" name="Manufacturer" type="text" />'+
         '<label for="password">Password:</label>'+
         '<input id="password" name="password" type="password" />'+
-        '<label for="ID">Model ID:</label>'+
+        '<label for="ID">Item ID:</label>'+
         '<input id="ID" name="ID" type="text" />'+
         '<br>'+
-        '<button class="button" id="butt1" type="submit">Submit</button>' +
+        '<button class="button" id="deleteButton" type="submit">Submit</button>' +
         '</div>'+
         '<div>';
+    document.getElementById("deleteButton").addEventListener("click",function(){deleteItem(document.getElementById("Item_Category").value)});
 }
 
 function show_item() {
