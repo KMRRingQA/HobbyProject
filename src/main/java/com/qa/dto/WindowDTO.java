@@ -7,6 +7,20 @@ import java.util.Objects;
 
 public class WindowDTO {
 
+    @Override
+    public String toString() {
+        return "WindowDTO{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", manufacturer=" + manufacturer +
+                ", bwf='" + bwf + '\'' +
+                ", thermalResistance='" + thermalResistance + '\'' +
+                ", dimensions='" + dimensions + '\'' +
+                ", cost=" + cost +
+                '}';
+    }
+
     private Long id;
     private String title;
     private String description;

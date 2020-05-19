@@ -14,7 +14,6 @@ public class Window {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-
     private String title;
     private String description;
     private String bwf;
@@ -22,14 +21,47 @@ public class Window {
     private String dimensions;
     private BigDecimal cost;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Manufacturer manufacturer;
 
     public Window() {
     }
 
+    public String getBwf() {
+        return bwf;
+    }
+
+    public void setBwf(String bwf) {
+        this.bwf = bwf;
+    }
+
+    public String getThermalResistance() {
+        return thermalResistance;
+    }
+
+    public void setThermalResistance(String thermalResistance) {
+        this.thermalResistance = thermalResistance;
+    }
+
+    public String getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(String dimensions) {
+        this.dimensions = dimensions;
+    }
+
+    public BigDecimal getCost() {
+        return cost;
+    }
+
+    public void setCost(BigDecimal cost) {
+        this.cost = cost;
+    }
+
     public Window(String title, String description, String bwf, String thermalResistance, String dimensions, BigDecimal cost) {
+        super();
         this.title = title;
         this.description = description;
         this.bwf = bwf;
@@ -88,37 +120,5 @@ public class Window {
     @Override
     public int hashCode() {
         return Objects.hash(id, title, description, bwf, thermalResistance, dimensions, cost, manufacturer);
-    }
-
-    public String getBwf() {
-        return bwf;
-    }
-
-    public void setBwf(String bwf) {
-        this.bwf = bwf;
-    }
-
-    public String getThermalResistance() {
-        return thermalResistance;
-    }
-
-    public void setThermalResistance(String thermalResistance) {
-        this.thermalResistance = thermalResistance;
-    }
-
-    public String getDimensions() {
-        return dimensions;
-    }
-
-    public void setDimensions(String dimensions) {
-        this.dimensions = dimensions;
-    }
-
-    public BigDecimal getCost() {
-        return cost;
-    }
-
-    public void setCost(BigDecimal cost) {
-        this.cost = cost;
     }
 }

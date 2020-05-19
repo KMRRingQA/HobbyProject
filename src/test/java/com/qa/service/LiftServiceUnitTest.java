@@ -95,7 +95,7 @@ public class LiftServiceUnitTest {
 
 	@Test
 	public void updateLiftsTest() {
-		// given
+
 		Lift newLift = new Lift("test2", "test2style", 200,200,"test2Dim",BigDecimal.valueOf(27.99));
 		newLift.setId(this.id);
 		
@@ -108,7 +108,6 @@ public class LiftServiceUnitTest {
 		when(this.repo.findById(this.id)).thenReturn(Optional.of(this.testLiftWithID));
 		when(this.mapper.map(updatedLift, LiftDTO.class)).thenReturn(updatedDTO);
 
-		// You NEED to configure a .equals() method in Lift.java for this to work
 		when(this.repo.save(updatedLift)).thenReturn(updatedLift);
 
 		assertEquals(updatedDTO, this.service.updateLift(this.id, newLift));

@@ -20,7 +20,7 @@ public class Lift {
     private String dimensions;
     private BigDecimal cost;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Manufacturer manufacturer;
 

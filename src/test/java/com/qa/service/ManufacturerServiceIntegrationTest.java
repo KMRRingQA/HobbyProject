@@ -6,6 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import com.qa.repo.DoorsRepository;
+import com.qa.repo.LiftsRepository;
+import com.qa.repo.WindowsRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +30,16 @@ public class ManufacturerServiceIntegrationTest {
 	private ManufacturerService service;
 
 	@Autowired
-	private ManufacturerRepository repo;
+	private ManufacturerRepository repoManu;
+
+	@Autowired
+	private WindowsRepository repoWindow;
+
+	@Autowired
+	private DoorsRepository repoDoor;
+
+	@Autowired
+	private LiftsRepository repoLift;
 
 	private Manufacturer testManufacturer;
 
@@ -42,10 +54,12 @@ public class ManufacturerServiceIntegrationTest {
 
 	@Before
 	public void init() {
+		this.repoWindow.deleteAll();
+		this.repoDoor.deleteAll();
+		this.repoLift.deleteAll();
+		this.repoManu.deleteAll();
 		this.testManufacturer = new Manufacturer("test", "test@email.com", "password");
-
-		this.repo.deleteAll();
-		this.testManufacturerWithID = this.repo.save(this.testManufacturer);
+		this.testManufacturerWithID = this.repoManu.save(this.testManufacturer);
 	}
 
 
