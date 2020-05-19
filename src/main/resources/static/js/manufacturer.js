@@ -151,9 +151,132 @@ function create_item() {
     document.getElementById("Item_Category").addEventListener("change", updateCreate)
 }
 
+function update(type) {
+    let Data;
+    if (type === "door") {
+        Data = `{"id":"${document.getElementById("ID").value}","title" : "${document.getElementById("modelName").value}","description": "${document.getElementById("type").value}","bwf": "${document.getElementById("bwf").value}", "thermalResistance": "${document.getElementById("thermal").value}", "dimensions": "${document.getElementById("dimensions").value}", "cost": "${document.getElementById("cost").value}", "manufacturer":{"id":"${document.getElementById("manufacturerID").value}"}}`;
+        REQ.open('PUT', `http://localhost:8181/updateDoor/${document.getElementById("ID").value}`);
+    } else if (type === "window"){
+        Data = `{"id":"${document.getElementById("ID").value}","title" : "${document.getElementById("modelName").value}","description": "${document.getElementById("type").value}","bwf": "${document.getElementById("bwf").value}", "thermalResistance": "${document.getElementById("thermal").value}", "dimensions": "${document.getElementById("dimensions").value}", "cost": "${document.getElementById("cost").value}", "manufacturer":{"id":"${document.getElementById("manufacturerID").value}"}}`;
+        REQ.open('PUT', `http://localhost:8181/updateWindow/${document.getElementById("ID").value}`);
+    } else if (type === "lift"){
+        Data = `{"id":"${document.getElementById("ID").value}","title" : "${document.getElementById("modelName").value}","description": "${document.getElementById("type").value}","carryCapacity": "${document.getElementById("carry_capacity").value}", "maxSpeed": "${document.getElementById("maxVel").value}", "dimensions": "${document.getElementById("dimensions").value}", "cost": "${document.getElementById("cost").value}", "manufacturer":{"id":"${document.getElementById("manufacturerID").value}"}}`;
+        REQ.open('PUT', `http://localhost:8181/updateLift/${document.getElementById("ID").value}`);
+    } else {
+        console.log('handle error');
+    }
+    REQ.setRequestHeader('Content-Type', 'Application/json');
+    REQ.setRequestHeader('Access-Control-Allow-Origin', '*');
+    REQ.responseType = "json";
+    REQ.onload = () => {
+        if (REQ.status === 201) {
+            console.log(REQ.response);
+            console.log(`${type} created`);
+        } else {
+            console.log('handle error');
+        }
+    }
+    REQ.send(Data);
+}
+
+
+function updateUpdate() {
+    if (document.getElementById("Item_Category").value==="Door"){
+        workSpace.innerHTML=
+            '<div class="container-table100">'+
+            '<div>'+
+            '<label for="ID">Door ID:</label>'+
+            '<input id="ID" name="ID" type="text" />'+
+            '<label for="Manufacturer">Manufacturer ID:</label>'+
+            '<input id="manufacturerID" name="Manufacturer" type="text" />'+
+            '<label for="password">Password:</label>'+
+            '<input id="password" name="password" type="password" />'+
+            '<label for="modelName">Model Name:</label>'+
+            '<input id="modelName" name="modelName" type="text" />'+
+            '<label for="type">Door Style:</label>'+
+            '<input id="type" name="type" type="text" />'+
+            '<label for="bwf">BWF Rating: (FWD)</label>'+
+            '<input id="bwf" name="bwf" type="text" />'+
+            '<label for="thermal">U-Value:</label>'+
+            '<input id="thermal" name="thermal" type="text" />'+
+            '<label for="dimensions">Dimensions:</label>'+
+            '<input id="dimensions" name="dimensions" type="text" />'+
+            '<label for="cost">Price: (£)</label>'+
+            '<input id="cost" name="cost" type="text" />'+
+            '<br>'+
+            '<button class="button" id="createDoorButton" type="submit">Submit</button>' +
+            '</div>'+
+            '</div>';
+        document.getElementById("createDoorButton").addEventListener("click",function(){update("door")});
+    } else if (document.getElementById("Item_Category").value==="Lift"){
+        workSpace.innerHTML=
+            '<div class="container-table100">'+
+            '<div>'+
+            '<label for="ID">Lift ID:</label>'+
+            '<input id="ID" name="ID" type="text" />'+
+            '<label for="Manufacturer">Manufacturer ID:</label>'+
+            '<input id="manufacturerID" name="Manufacturer" type="text" />'+
+            '<label for="password">Password:</label>'+
+            '<input id="password" name="password" type="password" />'+
+            '<label for="modelName">Model Name:</label>'+
+            '<input id="modelName" name="modelName" type="text" />'+
+            '<label for="type">Lift Type:</label>'+
+            '<input id="type" name="type" type="text" />'+
+            '<label for="carry_capacity">Carry Capacity</label>'+
+            '<input id="carry_capacity" name="carry_capacity" type="text" />'+
+            '<label for="maxVel">Max Velocity:</label>'+
+            '<input id="maxVel" name="maxVel" type="text" />'+
+            '<label for="dimensions">Car Dimensions:</label>'+
+            '<input id="dimensions" name="dimensions" type="text" />'+
+            '<label for="cost">Price: (£)</label>'+
+            '<input id="cost" name="cost" type="text" />'+
+            '<br>'+
+            '<button class="button" id="createLiftButton" type="submit">Submit</button>' +
+            '</div>'+
+            '</div>';
+        document.getElementById("createLiftButton").addEventListener("click",function(){update("lift")});
+    } else {
+        workSpace.innerHTML=
+            '<div class="container-table100">'+
+            '<div>'+
+            '<label for="ID">Window ID:</label>'+
+            '<input id="ID" name="ID" type="text" />'+
+            '<label for="Manufacturer">Manufacturer ID:</label>'+
+            '<input id="manufacturerID" name="Manufacturer" type="text" />'+
+            '<label for="password">Password:</label>'+
+            '<input id="password" name="password" type="password" />'+
+            '<label for="modelName">Model Name:</label>'+
+            '<input id="modelName" name="modelName" type="text" />'+
+            '<label for="type">Window Type:</label>'+
+            '<input id="type" name="type" type="text" />'+
+            '<label for="bwf">BWF Rating: (FWD)</label>'+
+            '<input id="bwf" name="bwf" type="text" />'+
+            '<label for="thermal">U-Value:</label>'+
+            '<input id="thermal" name="thermal" type="text" />'+
+            '<label for="dimensions">Dimensions:</label>'+
+            '<input id="dimensions" name="dimensions" type="text" />'+
+            '<label for="cost">Price: (£)</label>'+
+            '<input id="cost" name="cost" type="text" />'+
+            '<br>'+
+            '<button class="button" id="createWindowButton" type="submit">Submit</button>' +
+            '</div>'+
+            '</div>';
+        document.getElementById("createWindowButton").addEventListener("click",function(){update("window")});
+    }
+}
 
 function update_item(){
-
+    workSpace.innerHTML =
+        '<div class="container-table100">'+
+        '<div>' +
+        '<select id="Item_Category" name="Item_Category">' +
+        '<option value="Select Item">Select Item</option>' +
+        '<option value="Window">Window</option>' +
+        '<option value="Door">Door</option>' +
+        '<option value="Lift">Lift</option>' +
+        '</select>'+
+        '</div>';
+    document.getElementById("Item_Category").addEventListener("change", updateUpdate)
 }
 
 
