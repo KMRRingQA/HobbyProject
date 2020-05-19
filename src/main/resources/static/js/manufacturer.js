@@ -108,7 +108,7 @@ function updateCreate() {
             '<button class="button" id="createDoorButton" type="submit">Submit</button>' +
             '</div>'+
             '</div>';
-        document.getElementById("createDoorButton").addEventListener("click",createDoor);
+        document.getElementById("createDoorButton").addEventListener("click",function(){create("door")});
     } else if (document.getElementById("Item_Category").value==="Lift"){
         workSpace.innerHTML=
             '<div class="container-table100">'+
