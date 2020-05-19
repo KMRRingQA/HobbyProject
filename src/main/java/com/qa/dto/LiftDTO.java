@@ -109,6 +109,20 @@ public class LiftDTO {
         return carryCapacity;
     }
 
+    @Override
+    public String toString() {
+        return "LiftDTO{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", manufacturer=" + manufacturer +
+                ", carryCapacity=" + carryCapacity +
+                ", maxSpeed=" + maxSpeed +
+                ", dimensions='" + dimensions + '\'' +
+                ", cost=" + cost +
+                '}';
+    }
+
     public void setCarryCapacity(Integer carryCapacity) {
         this.carryCapacity = carryCapacity;
     }

@@ -40,25 +40,6 @@ public class Manufacturer {
         this.name = name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Manufacturer that = (Manufacturer) o;
-        return Objects.equals(id, that.id) &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(email, that.email) &&
-                Objects.equals(password, that.password) &&
-                Objects.equals(lifts, that.lifts) &&
-                Objects.equals(doors, that.doors) &&
-                Objects.equals(windows, that.windows);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, email, password, lifts, doors, windows);
-    }
-
     public String getEmail() {
         return email;
     }
@@ -113,5 +94,21 @@ public class Manufacturer {
 
     public void setDoors(List<Door> doors) {
         this.doors = doors;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Manufacturer that = (Manufacturer) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(email, that.email) &&
+                Objects.equals(password, that.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, email, password);
     }
 }

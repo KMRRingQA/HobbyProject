@@ -94,6 +94,19 @@ public class ManufacturerDTO {
         return password;
     }
 
+    @Override
+    public String toString() {
+        return "ManufacturerDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", lifts=" + lifts +
+                ", doors=" + doors +
+                ", windows=" + windows +
+                '}';
+    }
+
     public void setPassword(String password) {
         this.password = password;
     }
