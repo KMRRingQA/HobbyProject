@@ -10,13 +10,15 @@ public class Door {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String title;
     private String description;
     private String bwf;
     private String thermalResistance;
     private String dimensions;
     private BigDecimal cost;
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     private Manufacturer manufacturer;
 
     public Door() {
@@ -55,6 +57,7 @@ public class Door {
     }
 
     public Door(String title, String description, String bwf, String thermalResistance, String dimensions, BigDecimal cost) {
+        super();
         this.title = title;
         this.description = description;
         this.bwf = bwf;
