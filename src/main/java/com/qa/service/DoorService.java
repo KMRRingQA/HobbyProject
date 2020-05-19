@@ -2,7 +2,9 @@
 package com.qa.service;
 
 import com.qa.domain.Door;
+import com.qa.domain.Lift;
 import com.qa.dto.DoorDTO;
+import com.qa.dto.LiftDTO;
 import com.qa.exceptions.DoorNotFoundException;
 import com.qa.repo.DoorsRepository;
 import org.modelmapper.ModelMapper;
@@ -25,8 +27,8 @@ public class DoorService {
         this.mapper = mapper;
     }
 
-    public DoorDTO mapToDTO(Door door){
-        return new DoorDTO(door.getId(),door.getTitle(),door.getDescription(),door.getManufacturer().getName(),door.getBwf(),door.getThermalResistance(),door.getDimensions(),door.getCost());
+    private DoorDTO mapToDTO(Door door){
+        return this.mapper.map(door, DoorDTO.class);
     }
 
 

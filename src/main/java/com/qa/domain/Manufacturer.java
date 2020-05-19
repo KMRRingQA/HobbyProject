@@ -55,17 +55,6 @@ public class Manufacturer {
     }
 
     @Override
-    public String toString() {
-        return "Manufacturer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", doors=" + doors +
-                '}';
-    }
-
-    @Override
     public int hashCode() {
         return Objects.hash(id, name, email, password, lifts, doors, windows);
     }

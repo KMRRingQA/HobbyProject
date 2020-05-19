@@ -74,10 +74,7 @@ public class ManufacturerDTO {
         return Objects.equals(id, that.id) &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(email, that.email) &&
-                Objects.equals(password, that.password) &&
-                Objects.equals(lifts, that.lifts) &&
-                Objects.equals(doors, that.doors) &&
-                Objects.equals(windows, that.windows);
+                Objects.equals(password, that.password);
     }
 
     @Override
