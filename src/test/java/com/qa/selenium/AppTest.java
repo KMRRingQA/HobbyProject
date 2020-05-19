@@ -32,6 +32,12 @@ public class AppTest
 
     @BeforeTest
     public void startReport() {
+
+        App app = new App();
+        String[] args = null;
+        App.main(args);
+        assertTrue( app instanceof App );
+
         report = new ExtentReports(
                 System.getProperty("user.dir") + "/test-output/Report.html",
                 true
@@ -52,9 +58,9 @@ public class AppTest
         test = report.startTest("does google work");
         driver.manage().window().maximize();
         test.log(LogStatus.INFO, "Started chrome browser and made it fullscreen");
-        driver.get("https://www.google.com");
+        driver.get("http://localhost:8181");
         test.log(LogStatus.INFO, "navigated to localhost");
-        WebElement browse = (new WebDriverWait(driver, 1000)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#gbw > div > div > div.gb_ke.gb_i.gb_Kg.gb_Ag > div:nth-child(1) > a")));
+        WebElement browse = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#gbw > div > div > div.gb_ke.gb_i.gb_Kg.gb_Ag > div:nth-child(1) > a")));
         assertEquals(browse.getText(),"asdfafdf");
     }
 
