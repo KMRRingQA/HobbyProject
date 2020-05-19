@@ -21,6 +21,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.domain.Manufacturer;
 import com.qa.repo.ManufacturerRepository;
+import com.qa.repo.WindowsRepository;
+import com.qa.repo.DoorsRepository;
+import com.qa.repo.LiftsRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -31,7 +34,16 @@ public class ManufacturerControllerIntegrationTest {
     private MockMvc mock;
 
     @Autowired
-    private ManufacturerRepository repo;
+    private ManufacturerRepository repoManu;
+
+    @Autowired
+    private WindowsRepository repoWindow;
+
+    @Autowired
+    private DoorsRepository repoDoor;
+
+    @Autowired
+    private LiftsRepository repoLift;
 
     private ObjectMapper mapper = new ObjectMapper();
 
@@ -43,9 +55,12 @@ public class ManufacturerControllerIntegrationTest {
 
     @Before
     public void init() {
-        this.repo.deleteAll();
+        this.repoWindow.deleteAll();
+        this.repoDoor.deleteAll();
+        this.repoLift.deleteAll();
+        this.repoManu.deleteAll();
         this.testManufacturer = new Manufacturer("testName", "test@email.com","testpass");
-        this.testManufacturerWithID = this.repo.save(this.testManufacturer);
+        this.testManufacturerWithID = this.repoManu.save(this.testManufacturer);
         this.id = this.testManufacturerWithID.getId();
     }
 

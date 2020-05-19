@@ -2,6 +2,7 @@ package com.qa.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.domain.Door;
+import com.qa.service.DoorService;
 import com.qa.domain.Manufacturer;
 import com.qa.dto.DoorDTO;
 import com.qa.repo.DoorsRepository;
@@ -31,6 +32,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 public class DoorControllerIntegrationTest {
+
+    @Autowired
+    private DoorService service;
 
     @Autowired
     private MockMvc mock;

@@ -25,8 +25,8 @@ public class DoorService {
         this.mapper = mapper;
     }
 
-    private DoorDTO mapToDTO(Door door){
-        return this.mapper.map(door, DoorDTO.class);
+    public DoorDTO mapToDTO(Door door){
+        return new DoorDTO(door.getId(),door.getTitle(),door.getDescription(),door.getManufacturer().getName(),door.getBwf(),door.getThermalResistance(),door.getDimensions(),door.getCost());
     }
 
 

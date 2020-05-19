@@ -10,19 +10,26 @@ public class DoorDTO {
     private Long id;
     private String title;
     private String description;
-    private Manufacturer manufacturer;
+    private String manufacturer;
 
     private String bwf;
     private String thermalResistance;
     private String dimensions;
     private BigDecimal cost;
 
-    public DoorDTO() {
-    }
-
-    public DoorDTO(String title, String description) {
+    public DoorDTO(Long id, String title, String description, String manufacturer, String bwf, String thermalResistance, String dimensions, BigDecimal cost) {
+        this.id = id;
         this.title = title;
         this.description = description;
+        this.manufacturer = manufacturer;
+        this.bwf = bwf;
+        this.thermalResistance = thermalResistance;
+        this.dimensions = dimensions;
+        this.cost = cost;
+    }
+
+    public DoorDTO(){
+
     }
 
     public String getBwf() {
@@ -81,12 +88,26 @@ public class DoorDTO {
         this.description = description;
     }
 
-    public void setManufacturer(Manufacturer manufacturer) {
+    public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
     }
 
     public String getManufacturer() {
-        return manufacturer.getName();
+        return this.manufacturer;
+    }
+
+    @Override
+    public String toString() {
+        return "DoorDTO{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", manufacturer=" + manufacturer +
+                ", bwf='" + bwf + '\'' +
+                ", thermalResistance='" + thermalResistance + '\'' +
+                ", dimensions='" + dimensions + '\'' +
+                ", cost=" + cost +
+                '}';
     }
 
     @Override

@@ -183,7 +183,7 @@ function updateFilters() {
 }
 
 document.getElementById('select_item').addEventListener("click", updateFilters);
-document.addEventListener('DOMContentLoaded', getAllDoors);
+document.addEventListener('DOMContentLoaded', function(){getAll("doors")});
 let buttSearch = document.querySelector('#search');
 
 
