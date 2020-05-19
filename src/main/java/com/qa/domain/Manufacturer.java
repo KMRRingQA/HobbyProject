@@ -1,5 +1,8 @@
 package com.qa.domain;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +20,15 @@ public class Manufacturer {
     private String password;
 
     @OneToMany(mappedBy = "manufacturer", fetch = FetchType.LAZY)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Lift> lifts = new ArrayList<>();
 
     @OneToMany(mappedBy = "manufacturer", fetch = FetchType.LAZY)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Door> doors = new ArrayList<>();
 
     @OneToMany(mappedBy = "manufacturer", fetch = FetchType.LAZY)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Window> windows = new ArrayList<>();
 
     public Manufacturer() {
