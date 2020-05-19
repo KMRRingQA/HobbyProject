@@ -55,7 +55,7 @@ public class AppTest
         driver.get("https://www.google.com");
         test.log(LogStatus.INFO, "navigated to localhost");
         WebElement browse = (new WebDriverWait(driver, 1000)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#gbw > div > div > div.gb_ke.gb_i.gb_Kg.gb_Ag > div:nth-child(1) > a")));
-        assertEquals(browse.getText(),"Gmail");
+        assertEquals(browse.getText(),"asdfafdf");
     }
 
     @AfterMethod
