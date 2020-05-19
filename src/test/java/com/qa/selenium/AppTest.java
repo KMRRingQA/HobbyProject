@@ -19,6 +19,7 @@ import java.io.IOException;
 
 import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit test for simple App.
@@ -30,7 +31,7 @@ public class AppTest
     ExtentTest test;
 
     @BeforeTest
-    public void startReport() throws InterruptedException {
+    public void startReport() {
         report = new ExtentReports(
                 System.getProperty("user.dir") + "/test-output/Report.html",
                 true
@@ -39,8 +40,6 @@ public class AppTest
                 .addSystemInfo("Host Name", "QA")
                 .addSystemInfo("Tester", "Tadas");
         report.loadConfig(new File(System.getProperty("user.dir") + "\\extent-report.xml"));
-//        SpringApplication.run(App.class);
-//        sleep(10000);
     }
 
     @BeforeMethod
@@ -50,20 +49,13 @@ public class AppTest
 
     @Test
     public void testQATitle() throws InterruptedException, IOException {
-        test = report.startTest("buying cheapest first class UA flight to paris");
+        test = report.startTest("does google work");
         driver.manage().window().maximize();
         test.log(LogStatus.INFO, "Started chrome browser and made it fullscreen");
-        driver.get("http://localhost:8181/");
-        sleep(5000);
-        test.log(LogStatus.INFO, "Started chrome browser and made it fullscreen");
-        WebElement browse = (new WebDriverWait(driver, 1000)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#menu > ul > li:nth-child(2) > a")));
-        browse.click();
-
-        WebElement search = (new WebDriverWait(driver, 1000)).until(ExpectedConditions.presenceOfElementLocated(By.id("search")));
-
-
-        assertEquals(search.getText(),"SEARCH");
-
+        driver.get("https://www.google.com");
+        test.log(LogStatus.INFO, "navigated to localhost");
+        WebElement browse = (new WebDriverWait(driver, 1000)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#gbw > div > div > div.gb_ke.gb_i.gb_Kg.gb_Ag > div:nth-child(1) > a")));
+        assertEquals(browse.getText(),"Gmail");
     }
 
     @AfterMethod
