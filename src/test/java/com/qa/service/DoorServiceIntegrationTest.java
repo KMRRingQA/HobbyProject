@@ -66,7 +66,7 @@ public class DoorServiceIntegrationTest {
 	
 	@Test
 	public void testCreateDoor() {
-		assertEquals(service.mapToDTO(this.testDoorWithID), this.service.createDoor(testDoor));
+		assertEquals(this.mapToDTO(this.testDoorWithID), this.service.createDoor(testDoor));
 	}
 
 	@Test
@@ -76,12 +76,12 @@ public class DoorServiceIntegrationTest {
 
 	@Test
 	public void testFindDoorByID() {
-		assertThat(this.service.findDoorById(this.testDoorWithID.getId())).isEqualTo(service.mapToDTO(this.testDoorWithID));
+		assertThat(this.service.findDoorById(this.testDoorWithID.getId())).isEqualTo(this.mapToDTO(this.testDoorWithID));
 	}
 
 	@Test
 	public void testReadDoors() {
-		assertThat(this.service.readDoors()).isEqualTo(Stream.of(service.mapToDTO(testDoorWithID)).collect(Collectors.toList()));
+		assertThat(this.service.readDoors()).isEqualTo(Stream.of(this.mapToDTO(testDoorWithID)).collect(Collectors.toList()));
 	}
 
 	@Test
@@ -95,7 +95,7 @@ public class DoorServiceIntegrationTest {
 		updatedDoor.setId(this.testDoorWithID.getId());
 		newDoor.setId(this.testDoorWithID.getId());
 
-		assertThat(this.service.updateDoor(this.testDoorWithID.getId(), newDoor)).isEqualTo(service.mapToDTO(newDoor));
+		assertThat(this.service.updateDoor(this.testDoorWithID.getId(), newDoor)).isEqualTo(this.mapToDTO(newDoor));
 	}
 
 }

@@ -2,9 +2,7 @@
 package com.qa.service;
 
 import com.qa.domain.Door;
-import com.qa.domain.Lift;
 import com.qa.dto.DoorDTO;
-import com.qa.dto.LiftDTO;
 import com.qa.exceptions.DoorNotFoundException;
 import com.qa.repo.DoorsRepository;
 import org.modelmapper.ModelMapper;
@@ -48,11 +46,11 @@ public class DoorService {
 
     public DoorDTO updateDoor(Long id, Door door){
         Door update = this.repo.findById(id).orElseThrow(DoorNotFoundException::new);
+        update.setBwf(door.getBwf());
         update.setId(id);
         update.setTitle(door.getTitle());
-        update.setDescription(door.getDescription());
-        update.setBwf(door.getBwf());
         update.setDimensions(door.getDimensions());
+        update.setDescription(door.getDescription());
         update.setThermalResistance(door.getThermalResistance());
         update.setCost(door.getCost());
         repo.save(door);
