@@ -70,44 +70,42 @@ public class ManufacturerControllerUnitTest {
         verify(this.service, times(1)).createManufacturer(this.testManufacturer);
     }
 
-//    @Test
-//    public void deleteManufacturerTest() {
-//        this.controller.deleteManufacturer(id);
-//
-//        verify(this.service, times(1)).deleteManufacturer(id);
-//    }
-//
-//    @Test
-//    public void findManufacturerByIDTest() {
-//        when(this.service.findManufacturerByID(this.id)).thenReturn(this.manufacturerDTO);
-//
-//        assertEquals(new ResponseEntity<ManufacturerDTO>(this.manufacturerDTO, HttpStatus.OK), this.controller.getManufacturer(this.id));
-//
-//        verify(this.service, times(1)).findManufacturerByID(this.id);
-//    }
-//
-//    @Test
-//    public void getAllManufacturersTest() {
-//
-//        when(service.readManufacturers()).thenReturn(this.manufacturerList.stream().map(this::mapToDTO).collect(Collectors.toList()));
-//
-//        assertFalse("Controller has found no manufacturers", this.controller.getAllManufacturers().getBody().isEmpty());
-//
-//        verify(service, times(1)).readManufacturers();
-//    }
-//
-//    @Test
-//    public void updateManufacturersTest() {
-//        // given
-//        Manufacturer newManufacturer = new Manufacturer("Sir Manufacturerington esq.", "Blue", "Manufacturerington Manor");
-//        Manufacturer updatedManufacturer = new Manufacturer(newManufacturer.getName(), newManufacturer.getColour(), newManufacturer.getHabitat());
-//        updatedManufacturer.setId(this.id);
-//
-//        when(this.service.updateManufacturer(newManufacturer, this.id)).thenReturn(this.mapToDTO(updatedManufacturer));
-//
-//        assertEquals(new ResponseEntity<ManufacturerDTO>(this.mapToDTO(updatedManufacturer), HttpStatus.ACCEPTED), this.controller.updateManufacturer(this.id, newManufacturer));
-//
-//        verify(this.service, times(1)).updateManufacturer(newManufacturer, this.id);
-//    }
+    @Test
+    public void deleteManufacturerTest() {
+        this.controller.deleteManufacturer(id);
+
+        verify(this.service, times(1)).deleteManufacturer(id);
+    }
+
+    @Test
+    public void findManufacturerByIDTest() {
+        when(this.service.findManufacturerById(this.id)).thenReturn(this.manufacturerDTO);
+        assertEquals(new ResponseEntity<ManufacturerDTO>(this.manufacturerDTO, HttpStatus.OK), this.controller.getManufacturerById(this.id));
+
+        verify(this.service, times(1)).findManufacturerById(this.id);
+    }
+
+    @Test
+    public void getAllManufacturersTest() {
+
+        when(service.readManufacturers()).thenReturn(this.manufacturerList.stream().map(this::mapToDTO).collect(Collectors.toList()));
+
+        assertFalse("Controller has found no manufacturers", this.controller.getAllManufacturers().getBody().isEmpty());
+
+        verify(service, times(1)).readManufacturers();
+    }
+
+    @Test
+    public void updateManufacturersTest() {
+        Manufacturer newManufacturer = new Manufacturer("Gartec Lifts", "Gartec-Lifts@libz.com", "passw0rd");
+        Manufacturer updatedManufacturer = new Manufacturer(newManufacturer.getName(), newManufacturer.getEmail(), newManufacturer.getPassword());
+        updatedManufacturer.setId(this.id);
+
+        when(this.service.updateManufacturer(this.id, newManufacturer)).thenReturn(this.mapToDTO(updatedManufacturer));
+
+        assertEquals(new ResponseEntity<ManufacturerDTO>(this.mapToDTO(updatedManufacturer), HttpStatus.OK), this.controller.updateManufacturer(this.id, newManufacturer));
+
+        verify(this.service, times(1)).updateManufacturer(this.id, newManufacturer);
+    }
 
 }
