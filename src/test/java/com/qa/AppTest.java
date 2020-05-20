@@ -54,7 +54,7 @@ public class AppTest
     }
 
     @Test
-    public void testQATitle() throws InterruptedException, IOException {
+    public void testRevitTitle() throws InterruptedException, IOException {
         test = report.startTest("accessing localhost and checking title text");
         driver.manage().window().maximize();
         test.log(LogStatus.INFO, "Started chrome browser and made it fullscreen");
@@ -138,6 +138,73 @@ public class AppTest
         WebElement newDoor = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div[2]/div/div/div/div/div[2]/div[2]")));
         assertEquals("Selenium Door",newDoor.getText());
         test.log(LogStatus.INFO, "establishes that newly created door is present.");
+    }
+    
+    @Test
+    public void updateWindow() throws InterruptedException, IOException {
+        test = report.startTest("Will update a window, then check for its presence.");
+        driver.manage().window().maximize();
+        test.log(LogStatus.INFO, "Started chrome browser and made it fullscreen");
+        driver.get("http://localhost:8181");
+        test.log(LogStatus.INFO, "navigated to localhost");
+        sleep(500);
+        WebElement manufacturerTools = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("Manufacturer")));
+        manufacturerTools.click();
+        test.log(LogStatus.INFO, "navigated to manufacturer tools");
+        sleep(500);
+
+        WebElement updateItem = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("UpdateButton")));
+        updateItem.click();
+        test.log(LogStatus.INFO, "pressed update item button");
+        sleep(500);
+
+        WebElement itemSelect = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("Item_Category")));
+        Select itemSelector = new Select(driver.findElement(By.name("Item_Category")));
+        itemSelector.selectByValue("Window");
+        test.log(LogStatus.INFO, "select window");
+
+        sleep(500);
+        WebElement windowID = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("ID")));
+        windowID.sendKeys("14");
+        WebElement manufacturerID = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("manufacturerID")));
+        manufacturerID.sendKeys("21");
+        WebElement modelName = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("modelName")));
+        modelName.sendKeys("Selenium Window");
+        WebElement doorStyle = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("type")));
+        doorStyle.sendKeys("Test");
+        WebElement bwfRating = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("bwf")));
+        bwfRating.sendKeys("FWD30");
+        WebElement uValue = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("thermal")));
+        uValue.sendKeys("1.4");
+        WebElement dimensions = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("dimensions")));
+        dimensions.sendKeys("720x762x35");
+        WebElement price = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("cost")));
+        price.sendKeys("49.00");
+        test.log(LogStatus.INFO, "entered item data");
+        sleep(500);
+
+        WebElement createWindowButton = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("createWindowButton")));
+        createWindowButton.click();
+        test.log(LogStatus.INFO, "pressed submit");
+        sleep(1000);
+
+        WebElement browse = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/ul/li[2]/a")));
+        browse.click();
+        test.log(LogStatus.INFO, "navigated to browse menu");
+        sleep(500);
+
+        WebElement itemSelect2 = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("select_item")));
+        Select itemSelector2 = new Select(driver.findElement(By.name("select_item")));
+        itemSelector2.selectByValue("Windows");
+        test.log(LogStatus.INFO, "select windows");
+
+        WebElement search = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("search")));
+        search.click();
+        test.log(LogStatus.INFO, "searched for windows");
+        sleep(2500);
+
+        WebElement newWindow = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div[2]/div/div/div/div/div[2]/div[2]")));
+        assertEquals("Selenium Window",newWindow.getText());
     }
 
     @AfterMethod
