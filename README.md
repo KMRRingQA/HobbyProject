@@ -35,9 +35,6 @@ Current Test Coverage: 97% java (IntelliJ), 89% SonarQube
 Due to the nature of this being an individual project, I do not accept contributions to this project as of now.
 ### License
 This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md) file for details 
-### Authors
-* Korbinian Ring
-* [[tvaidotas](https://github.com/tvaidotas)]
 
 ## Deploy project
 how to deploy the project for personal use.
