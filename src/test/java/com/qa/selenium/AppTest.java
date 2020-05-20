@@ -119,7 +119,7 @@ public class AppTest
         WebElement createDoorButton = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("createDoorButton")));
         createDoorButton.click();
         test.log(LogStatus.INFO, "pressed submit");
-        sleep(500);
+        sleep(5000);
 
         WebElement browse = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/ul/li[2]/a")));
         browse.click();
