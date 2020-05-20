@@ -63,7 +63,6 @@ public class AppTest
         WebElement title = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("Title")));
         test.log(LogStatus.INFO, "retreived title element");
         assertEquals("INFO-REVIT",title.getText());
-        sleep(500);
     }
 
     @Test
@@ -73,7 +72,6 @@ public class AppTest
         test.log(LogStatus.INFO, "Started chrome browser and made it fullscreen");
         driver.get("http://localhost:8181");
         test.log(LogStatus.INFO, "navigated to localhost");
-        sleep(500);
         WebElement manufacturerTools = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("Manufacturer")));
         manufacturerTools.click();
         test.log(LogStatus.INFO, "navigate to manufacturer tools");
@@ -85,27 +83,23 @@ public class AppTest
         WebElement username = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("username")));
         username.sendKeys("SeleniumTester");
         test.log(LogStatus.INFO, "entered manufacturer name");
-        sleep(500);
         WebElement email = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("email")));
         email.sendKeys("SeleniumTester@gmail.com");
         test.log(LogStatus.INFO, "entered email");
-        sleep(500);
         WebElement password = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("password")));
         password.sendKeys("superSafePassword");
         test.log(LogStatus.INFO, "entered password");
-        sleep(500);
         WebElement submit = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("registerButton")));
         submit.click();
         test.log(LogStatus.INFO, "pressed submit");
         WebElement createItem = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("CreateButton")));
         createItem.click();
         test.log(LogStatus.INFO, "navigate to create item");
-        sleep(2500);
+        sleep(3500);
 
         Select itemSelector = new Select(driver.findElement(By.name("Item_Category")));
         itemSelector.selectByValue("Door");
 
-        sleep(500);
         WebElement manufacturerID = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("manufacturerID")));
         manufacturerID.sendKeys("1");
         WebElement modelName = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("modelName")));
@@ -121,7 +115,6 @@ public class AppTest
         WebElement price = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("cost")));
         price.sendKeys("40.00");
         test.log(LogStatus.INFO, "entered item data");
-        sleep(500);
 
         WebElement createDoorButton = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("createDoorButton")));
         createDoorButton.click();
@@ -132,7 +125,6 @@ public class AppTest
         browse.click();
         test.log(LogStatus.INFO, "navigated to browse menu");
         sleep(5000);
-
         WebElement newDoor = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div[2]/div/div/div/div/div[2]/div[2]")));
         assertEquals("Selenium Door",newDoor.getText());
         test.log(LogStatus.INFO, "establishes that newly created door is present.");
@@ -145,7 +137,6 @@ public class AppTest
         test.log(LogStatus.INFO, "Started chrome browser and made it fullscreen");
         driver.get("http://localhost:8181");
         test.log(LogStatus.INFO, "navigated to localhost");
-        sleep(500);
         WebElement manufacturerTools = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("Manufacturer")));
         manufacturerTools.click();
         test.log(LogStatus.INFO, "navigated to manufacturer tools");
@@ -178,8 +169,6 @@ public class AppTest
         WebElement price = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("cost")));
         price.sendKeys("49.00");
         test.log(LogStatus.INFO, "entered item data");
-        sleep(500);
-
         WebElement createWindowButton = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("createWindowButton")));
         createWindowButton.click();
         test.log(LogStatus.INFO, "pressed submit");
@@ -194,8 +183,6 @@ public class AppTest
         Select itemSelector2 = new Select(driver.findElement(By.name("select_item")));
         itemSelector2.selectByValue("Windows");
         test.log(LogStatus.INFO, "select windows");
-        sleep(500);
-
         WebElement search = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("search")));
         search.click();
         test.log(LogStatus.INFO, "searched for windows");
@@ -212,8 +199,6 @@ public class AppTest
         test.log(LogStatus.INFO, "Started chrome browser and made it fullscreen");
         driver.get("http://localhost:8181");
         test.log(LogStatus.INFO, "navigated to localhost");
-        sleep(500);
-
         WebElement manufacturerTools = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("Manufacturer")));
         manufacturerTools.click();
         test.log(LogStatus.INFO, "navigated to manufacturer tools");
@@ -232,7 +217,6 @@ public class AppTest
         WebElement itemID = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("ID")));
         itemID.sendKeys("18");
         test.log(LogStatus.INFO, "entering details");
-        sleep(500);
 
         WebElement submit = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("deleteButton")));
         submit.click();
