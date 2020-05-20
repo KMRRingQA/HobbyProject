@@ -1,6 +1,5 @@
 package com.qa.service;
 
-import com.qa.domain.Lift;
 import com.qa.domain.Manufacturer;
 import com.qa.dto.ManufacturerDTO;
 import com.qa.exceptions.ManufacturerNotFoundException;

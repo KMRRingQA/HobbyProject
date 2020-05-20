@@ -27,7 +27,7 @@ public class WindowController {
 
     @PostMapping("/createWindow")
     public ResponseEntity<WindowDTO> createWindow(@RequestBody Window window){
-        return new ResponseEntity<WindowDTO>(this.service.createWindow(window), HttpStatus.CREATED);
+        return new ResponseEntity<>(this.service.createWindow(window), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/deleteWindow/{id}")

@@ -27,7 +27,7 @@ public class DoorController {
 
     @PostMapping("/createDoor")
     public ResponseEntity<DoorDTO> createDoor(@RequestBody Door door){
-        return new ResponseEntity<DoorDTO>(this.service.createDoor(door), HttpStatus.CREATED);
+        return new ResponseEntity<>(this.service.createDoor(door), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/deleteDoor/{id}")

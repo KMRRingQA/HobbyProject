@@ -1,8 +1,5 @@
 package com.qa.dto;
 
-import com.qa.domain.Lift;
-import com.qa.domain.Window;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController
@@ -28,7 +27,7 @@ public class ManufacturerController {
 
     @PostMapping("/createManufacturer")
     public ResponseEntity<ManufacturerDTO> createManufacturer(@RequestBody Manufacturer manufacturer){
-        return new ResponseEntity<ManufacturerDTO>(this.service.createManufacturer(manufacturer), HttpStatus.CREATED);
+        return new ResponseEntity<>(this.service.createManufacturer(manufacturer), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/deleteManufacturer/{id}")
