@@ -12,11 +12,11 @@ It provides both back and front end foor a database which may be used to keep tr
     1. [Risk Assessment](#risk-assessment)
     1. [Using the Website](#using-the-website)
 1. [Deploy Project](#release-process)
-    1. [Versioning](#versioning)
-1. [Further Reading](#further-reading)
-1. [Contributing](#contributing)
-1. [License](#license)
-1. [Authors](#authors)
+    1. [Deploy](#deploy)
+    1. [Connect users](#connect_users)
+    1. [Testing](#testing)
+    1. [Development](#development)
+    1. [CI Pipeline (Jenkins)](#ci_pipeline_(jenkins))   
 1. [Acknowledgements](#acknowledgements)
 
 ## Project Info
@@ -94,7 +94,7 @@ mvn deploy:deploy-file --define generatePom=false --define pomFile=pom.xml --def
 * You may change the artefact name in the pom.xml.
 
 
-## acknowledgements
+## Acknowledgements
 * Jordan [[JHarry444](https://github.com/JHarry444)] in addition to the project layout being heavily based off his project [[SpringDucks](https://github.com/JHarry444/SpringDucks)], he gave essential advice during development of the project.
 * Templated [[Templated](https://templated.co/)] for source of CSS templates
 * Colorlib [[Colorlib](https://colorlib.com/wp/template/responsive-table-v1/)] for source of CSS templates
