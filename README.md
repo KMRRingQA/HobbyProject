@@ -9,7 +9,7 @@ It provides both back and front end foor a database which may be used to keep tr
     1. [Version](#version)
     1. [Contributing](#contributing)
     1. [License](#license)
-    1. [Authors](#authors)
+    1. [Risk Assessment](#risk-assessment)
 1. [Deploy Project](#release-process)
     1. [Versioning](#versioning)
 1. [Further Reading](#further-reading)
@@ -35,6 +35,8 @@ Current Test Coverage: 97% java (IntelliJ), 89% SonarQube
 Due to the nature of this being an individual project, I do not accept contributions to this project as of now.
 ### License
 This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md) file for details 
+### Risk Assessment
+A risk assessment of the project is present [Risk Assessment](docs/Risk Assessment.docx)
 
 ## Deploy project
 how to deploy the project for personal use.
@@ -53,11 +55,12 @@ The server will now be live on localhost:8181
 
 ### Connect users
 
-in order to connect users outside of your local machine, you will need to be on, or simulate, a LAN. You may do this using [[Hamachi](https://www.vpn.net/)]
+in order to connect users outside of your local machine, you will need to be on, or simulate, a LAN. You may do this using [[Hamachi](https://www.vpn.net/)]. If the LAN is real, simply connect to the host device using the private IP (cmd --> ipconfig). If using VLAN, use the IP Provided by Hamachi.
 
-## Develop project
-### CI Pipeline
 ### Testing
+
+building the file using Maven will run all the (160) tests. should you want to run specific tests only, an IDE such as IntelliJ or Eclipse is recommended.
+When inside of the Project, right click the test/folder you would like to run, and select "Run Tests". Alternatively, you may press Ctrl+Shift+F10.
 
 ## acknowledgements
 * Jordan [[JHarry444](https://github.com/JHarry444)] in addition to the project layout being heavily based off his project [[SpringDucks](https://github.com/JHarry444/SpringDucks)], he gave essential advice during development of the project.
