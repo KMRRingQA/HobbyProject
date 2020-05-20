@@ -133,7 +133,7 @@ public class AppTest
         WebElement browse = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/ul/li[2]/a")));
         browse.click();
         test.log(LogStatus.INFO, "navigated to browse menu");
-        sleep(1000);
+        sleep(5000);
 
         WebElement newDoor = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div[2]/div/div/div/div/div[2]/div[2]")));
         assertEquals("Selenium Door",newDoor.getText());
@@ -205,6 +205,60 @@ public class AppTest
 
         WebElement newWindow = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div[2]/div/div/div/div/div[2]/div[2]")));
         assertEquals("Selenium Window",newWindow.getText());
+    }
+
+    @Test
+    public void deleteLift() throws InterruptedException, IOException {
+        test = report.startTest("Will update a window, then check for its presence.");
+        driver.manage().window().maximize();
+        test.log(LogStatus.INFO, "Started chrome browser and made it fullscreen");
+        driver.get("http://localhost:8181");
+        test.log(LogStatus.INFO, "navigated to localhost");
+        sleep(500);
+
+        WebElement manufacturerTools = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("Manufacturer")));
+        manufacturerTools.click();
+        test.log(LogStatus.INFO, "navigated to manufacturer tools");
+        sleep(500);
+
+        WebElement deleteItem = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("DeleteButton")));
+        deleteItem.click();
+        test.log(LogStatus.INFO, "navigated to delete item section");
+        sleep(500);
+
+        WebElement itemSelect = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("Item_Category")));
+        Select itemSelector = new Select(driver.findElement(By.name("Item_Category")));
+        itemSelector.selectByValue("lift");
+        test.log(LogStatus.INFO, "select Lift");
+        sleep(500);
+
+        WebElement itemID = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("ID")));
+        itemID.sendKeys("18");
+        test.log(LogStatus.INFO, "entering details");
+        sleep(500);
+
+        WebElement submit = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("deleteButton")));
+        submit.click();
+        test.log(LogStatus.INFO, "submitting delete command");
+        sleep(500);
+
+        WebElement browse = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("ShowButton")));
+        browse.click();
+        test.log(LogStatus.INFO, "navigating to browse section");
+        sleep(500);
+
+        WebElement itemSelect2 = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("select_item")));
+        Select itemSelector2 = new Select(driver.findElement(By.name("select_item")));
+        itemSelector2.selectByValue("Lifts");
+        test.log(LogStatus.INFO, "select Lift");
+        sleep(500);
+
+        WebElement search = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("search")));
+        search.click();
+        test.log(LogStatus.INFO, "searching for lifts");
+        sleep(2500);
+
+        assertTrue(driver.findElements(By.xpath("/html/body/div[2]/div[2]/div/div/div/div/div[3]")).isEmpty());
     }
 
     @AfterMethod
