@@ -36,7 +36,7 @@ Due to the nature of this being an individual project, I do not accept contribut
 ### License
 This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md) file for details 
 ### Risk Assessment
-A risk assessment of the project is present [Risk Assessment](docs/Risk Assessment.docx)
+A risk assessment of the project is present [docs/Risk Assessment.docx](LICENSE.md)
 
 ## Deploy project
 how to deploy the project for personal use.
