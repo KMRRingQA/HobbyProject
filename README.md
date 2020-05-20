@@ -36,13 +36,27 @@ Due to the nature of this being an individual project, I do not accept contribut
 ### License
 This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md) file for details 
 ### Authors
--Korbinian Ring
-
+* Korbinian Ring
+* [[tvaidotas](https://github.com/tvaidotas)]
 
 ## Deploy project
+how to deploy the project for personal use.
+
 ### Deploy
+
+in order to run the program you will need Maven to obtain the dependencies in order to run the program using Java. To build the project simply:
+* Clone this repository using Git or similar
+* Clone the repo to your machine
+* open command prompt
+* cd <path/to/project/folder>
+* mvn clean install (this will take a while)
+* mvn spring-boot:run
+
+The server will now be live on localhost:8181
+
 ### Connect users
 
+in order to connect users outside of your local machine, you will need to be on, or simulate, a LAN. You may do this using [[Hamachi](https://www.vpn.net/)]
 
 ## Develop project
 ### CI Pipeline
