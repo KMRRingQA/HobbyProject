@@ -6,6 +6,9 @@ It provides both back and front end foor a database which may be used to keep tr
 ## Table of Contents
 1. [Project Info](#project-info)
     1. [Design Process](#design-process)
+    1. [Entity Relationship](#entity_relationship)
+    1. [Project Structure](#project_structure)
+    1. [Design Process](#design-process)
     1. [Version](#version)
     1. [Contributing](#contributing)
     1. [License](#license)
@@ -24,11 +27,14 @@ It provides both back and front end foor a database which may be used to keep tr
 refer to docs folder for further documentation on planning & testing.
 
 ### Design Process
-
 The initial target of this project was to allow for communication between manufacturers and architects with the use of the database, however the project is currently functional as a personal database.
-
 Kanban board used for planning: [Trello](https://trello.com/b/bp9c8Uks/construction-part-database)
-
+### Entity Relationship
+The entity relationship for this diagram is as shown below.
+![ERD](https://i.imgur.com/pkUbMz9.png)
+### Project Structure
+The UML of the project is as shown below. It follows a standard method for accessing databases, with the back end accepting API calls from the front end, which are then used for data manipulation. <Type> refers to Manufacturer, Door, Lift or Window, as they are handled very similarly from the backend.
+![UML](https://i.imgur.com/cGaNYL1.png)
 ### Version
 Current release: 1.0
 Current Test Coverage: 97% java (IntelliJ), 89% SonarQube
@@ -41,9 +47,22 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 A risk assessment of the project is present in docs:
 ![RiskAssessment](https://i.imgur.com/xr5bWYq.png)
 
-
 ### Using the Website
+after deploying the project (see next chapter), navigate to http://localhost:8181/.
+You should see the homepage of the website:
+![homepage](https://i.imgur.com/zl1bZtN.png)
 
+use the tabs at the top to navigate to the desired section (note, contact support is in development). In order to register a manufacturer, add, update or remove an item, go to "manufacturer tools". In order to search through items, use "browse":
+
+![browse](https://i.imgur.com/BtC2b5I.png)
+
+You may sort using the "sort by..." selector, or filter using the "custom filter" script tool. Allowed filters are:
+* Manufacturer:<name>
+* MaxPrice:<price>
+* MinBWF:FWD<value>
+* Style:<name>
+* Type:<name>
+more options are in development.
 
 ## Deploy project
 how to deploy the project for personal use.
