@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="156" passed="156">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="169948" started-at="2020-05-20T11:18:33Z" finished-at="2020-05-20T11:21:23Z">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="169948" started-at="2020-05-20T11:18:33Z" finished-at="2020-05-20T11:21:23Z">
+      <class name="com.qa.rest.WindowControllerIntegrationTest">
+        <test-method status="PASS" signature="testGetAllWindows() throws java.lang.Exception" name="testGetAllWindows" duration-ms="6396" started-at="2020-05-20T12:19:48Z" finished-at="2020-05-20T12:19:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAllWindows -->
+        <test-method status="PASS" signature="testCreateWindow() throws java.lang.Exception" name="testCreateWindow" duration-ms="2938" started-at="2020-05-20T12:19:48Z" finished-at="2020-05-20T12:19:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateWindow -->
+        <test-method status="PASS" signature="testUpdateWindow() throws java.lang.Exception" name="testUpdateWindow" duration-ms="10171" started-at="2020-05-20T12:19:48Z" finished-at="2020-05-20T12:19:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateWindow -->
+        <test-method status="PASS" signature="testGetWindow() throws java.lang.Exception" name="testGetWindow" duration-ms="17914" started-at="2020-05-20T12:19:48Z" finished-at="2020-05-20T12:20:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetWindow -->
+        <test-method status="PASS" signature="testDeleteWindow() throws java.lang.Exception" name="testDeleteWindow" duration-ms="14776" started-at="2020-05-20T12:19:48Z" finished-at="2020-05-20T12:20:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteWindow -->
+      </class> <!-- com.qa.rest.WindowControllerIntegrationTest -->
+      <class name="com.qa.dto.DoorDTOUnitTest">
+        <test-method status="PASS" signature="checkEquality()" name="checkEquality" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEquality -->
+        <test-method status="PASS" signature="doorIdNotEqual()" name="doorIdNotEqual" duration-ms="2" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doorIdNotEqual -->
+        <test-method status="PASS" signature="emptyConstructor()" name="emptyConstructor" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyConstructor -->
+        <test-method status="PASS" signature="equalsWithNull()" name="equalsWithNull" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithNull -->
+        <test-method status="PASS" signature="constructorWithoutId()" name="constructorWithoutId" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- constructorWithoutId -->
+        <test-method status="PASS" signature="equalsWithDifferentObject()" name="equalsWithDifferentObject" duration-ms="2" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithDifferentObject -->
+        <test-method status="PASS" signature="checkEqualityBetweenDifferentObjects()" name="checkEqualityBetweenDifferentObjects" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEqualityBetweenDifferentObjects -->
+        <test-method status="PASS" signature="hashCodeTest()" name="hashCodeTest" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTest -->
+        <test-method status="PASS" signature="createDoorWithId()" name="createDoorWithId" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createDoorWithId -->
+        <test-method status="PASS" signature="hashCodeTestWithNull()" name="hashCodeTestWithNull" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTestWithNull -->
+      </class> <!-- com.qa.dto.DoorDTOUnitTest -->
+      <class name="com.qa.rest.DoorControllerIntegrationTest">
+        <test-method status="PASS" signature="testDeleteDoor() throws java.lang.Exception" name="testDeleteDoor" duration-ms="32689" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:19:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteDoor -->
+        <test-method status="PASS" signature="testGetAllDoors() throws java.lang.Exception" name="testGetAllDoors" duration-ms="17694" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAllDoors -->
+        <test-method status="PASS" signature="testCreateDoor() throws java.lang.Exception" name="testCreateDoor" duration-ms="28063" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:19:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateDoor -->
+        <test-method status="PASS" signature="testGetDoor() throws java.lang.Exception" name="testGetDoor" duration-ms="24892" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetDoor -->
+        <test-method status="PASS" signature="testUpdateDoor() throws java.lang.Exception" name="testUpdateDoor" duration-ms="21539" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateDoor -->
+      </class> <!-- com.qa.rest.DoorControllerIntegrationTest -->
+      <class name="com.qa.dto.ManufacturerDTOUnitTest">
+        <test-method status="PASS" signature="emptyConstructor()" name="emptyConstructor" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyConstructor -->
+        <test-method status="PASS" signature="manufacturerIdNotEqual()" name="manufacturerIdNotEqual" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- manufacturerIdNotEqual -->
+        <test-method status="PASS" signature="checkEqualityBetweenDifferentObjects()" name="checkEqualityBetweenDifferentObjects" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEqualityBetweenDifferentObjects -->
+        <test-method status="PASS" signature="hashCodeTest()" name="hashCodeTest" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTest -->
+        <test-method status="PASS" signature="createManufacturerWithId()" name="createManufacturerWithId" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createManufacturerWithId -->
+        <test-method status="PASS" signature="equalsWithNull()" name="equalsWithNull" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithNull -->
+        <test-method status="PASS" signature="equalsWithDifferentObject()" name="equalsWithDifferentObject" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithDifferentObject -->
+        <test-method status="PASS" signature="constructorWithoutId()" name="constructorWithoutId" duration-ms="0" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- constructorWithoutId -->
+        <test-method status="PASS" signature="checkEquality()" name="checkEquality" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEquality -->
+        <test-method status="PASS" signature="hashCodeTestWithNull()" name="hashCodeTestWithNull" duration-ms="2" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTestWithNull -->
+      </class> <!-- com.qa.dto.ManufacturerDTOUnitTest -->
+      <class name="com.qa.service.DoorServiceUnitTest">
+        <test-method status="PASS" signature="findDoorByIDTest()" name="findDoorByIDTest" duration-ms="124" started-at="2020-05-20T12:20:38Z" finished-at="2020-05-20T12:20:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findDoorByIDTest -->
+        <test-method status="PASS" signature="updateDoorsTest()" name="updateDoorsTest" duration-ms="131" started-at="2020-05-20T12:20:38Z" finished-at="2020-05-20T12:20:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateDoorsTest -->
+        <test-method status="PASS" signature="deleteDoorTest()" name="deleteDoorTest" duration-ms="127" started-at="2020-05-20T12:20:38Z" finished-at="2020-05-20T12:20:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteDoorTest -->
+        <test-method status="PASS" signature="createDoorTest()" name="createDoorTest" duration-ms="137" started-at="2020-05-20T12:20:38Z" finished-at="2020-05-20T12:20:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createDoorTest -->
+        <test-method status="PASS" signature="readDoorsTest()" name="readDoorsTest" duration-ms="134" started-at="2020-05-20T12:20:38Z" finished-at="2020-05-20T12:20:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- readDoorsTest -->
+      </class> <!-- com.qa.service.DoorServiceUnitTest -->
+      <class name="com.qa.service.WindowServiceIntegrationTest">
+        <test-method status="PASS" signature="testFindWindowByID()" name="testFindWindowByID" duration-ms="6362" started-at="2020-05-20T12:21:05Z" finished-at="2020-05-20T12:21:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFindWindowByID -->
+        <test-method status="PASS" signature="testReadWindows()" name="testReadWindows" duration-ms="9910" started-at="2020-05-20T12:21:05Z" finished-at="2020-05-20T12:21:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testReadWindows -->
+        <test-method status="PASS" signature="testCreateWindow()" name="testCreateWindow" duration-ms="2969" started-at="2020-05-20T12:21:05Z" finished-at="2020-05-20T12:21:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateWindow -->
+        <test-method status="PASS" signature="testDeleteWindow()" name="testDeleteWindow" duration-ms="18646" started-at="2020-05-20T12:21:05Z" finished-at="2020-05-20T12:21:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteWindow -->
+        <test-method status="PASS" signature="testUpdateWindow()" name="testUpdateWindow" duration-ms="13961" started-at="2020-05-20T12:21:05Z" finished-at="2020-05-20T12:21:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateWindow -->
+      </class> <!-- com.qa.service.WindowServiceIntegrationTest -->
+      <class name="com.qa.service.ManufacturerServiceIntegrationTest">
+        <test-method status="PASS" signature="testDeleteManufacturer()" name="testDeleteManufacturer" duration-ms="7083" started-at="2020-05-20T12:20:57Z" finished-at="2020-05-20T12:21:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteManufacturer -->
+      </class> <!-- com.qa.service.ManufacturerServiceIntegrationTest -->
+      <class name="com.qa.domain.LiftUnitTest">
+        <test-method status="PASS" signature="equalsWithDifferentObject()" name="equalsWithDifferentObject" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithDifferentObject -->
+        <test-method status="PASS" signature="createLiftWithId()" name="createLiftWithId" duration-ms="2" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createLiftWithId -->
+        <test-method status="PASS" signature="checkEqualityBetweenDifferentObjects()" name="checkEqualityBetweenDifferentObjects" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEqualityBetweenDifferentObjects -->
+        <test-method status="PASS" signature="checkEquality()" name="checkEquality" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEquality -->
+        <test-method status="PASS" signature="equalsWithNull()" name="equalsWithNull" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithNull -->
+        <test-method status="PASS" signature="emptyConstructor()" name="emptyConstructor" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyConstructor -->
+        <test-method status="PASS" signature="liftIdNotEqual()" name="liftIdNotEqual" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- liftIdNotEqual -->
+        <test-method status="PASS" signature="hashCodeTestWithNull()" name="hashCodeTestWithNull" duration-ms="2" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTestWithNull -->
+        <test-method status="PASS" signature="hashCodeTest()" name="hashCodeTest" duration-ms="2" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTest -->
+        <test-method status="PASS" signature="constructorWithoutId()" name="constructorWithoutId" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- constructorWithoutId -->
+      </class> <!-- com.qa.domain.LiftUnitTest -->
+      <class name="com.qa.domain.ManufacturerUnitTest">
+        <test-method status="PASS" signature="constructorWithoutId()" name="constructorWithoutId" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- constructorWithoutId -->
+        <test-method status="PASS" signature="checkEqualityBetweenDifferentObjects()" name="checkEqualityBetweenDifferentObjects" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEqualityBetweenDifferentObjects -->
+        <test-method status="PASS" signature="checkEquality()" name="checkEquality" duration-ms="0" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEquality -->
+        <test-method status="PASS" signature="createManufacturerWithId()" name="createManufacturerWithId" duration-ms="0" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createManufacturerWithId -->
+        <test-method status="PASS" signature="manufacturerIdNotEqual()" name="manufacturerIdNotEqual" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- manufacturerIdNotEqual -->
+        <test-method status="PASS" signature="emptyConstructor()" name="emptyConstructor" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyConstructor -->
+        <test-method status="PASS" signature="equalsWithDifferentObject()" name="equalsWithDifferentObject" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithDifferentObject -->
+        <test-method status="PASS" signature="hashCodeTestWithNull()" name="hashCodeTestWithNull" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTestWithNull -->
+        <test-method status="PASS" signature="hashCodeTest()" name="hashCodeTest" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTest -->
+        <test-method status="PASS" signature="equalsWithNull()" name="equalsWithNull" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithNull -->
+      </class> <!-- com.qa.domain.ManufacturerUnitTest -->
+      <class name="com.qa.domain.WindowUnitTest">
+        <test-method status="PASS" signature="checkEqualityBetweenDifferentObjects()" name="checkEqualityBetweenDifferentObjects" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEqualityBetweenDifferentObjects -->
+        <test-method status="PASS" signature="hashCodeTestWithNull()" name="hashCodeTestWithNull" duration-ms="2" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTestWithNull -->
+        <test-method status="PASS" signature="emptyConstructor()" name="emptyConstructor" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyConstructor -->
+        <test-method status="PASS" signature="equalsWithNull()" name="equalsWithNull" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithNull -->
+        <test-method status="PASS" signature="createWindowWithId()" name="createWindowWithId" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createWindowWithId -->
+        <test-method status="PASS" signature="windowIdNotEqual()" name="windowIdNotEqual" duration-ms="2" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- windowIdNotEqual -->
+        <test-method status="PASS" signature="hashCodeTest()" name="hashCodeTest" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTest -->
+        <test-method status="PASS" signature="constructorWithoutId()" name="constructorWithoutId" duration-ms="0" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- constructorWithoutId -->
+        <test-method status="PASS" signature="checkEquality()" name="checkEquality" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEquality -->
+        <test-method status="PASS" signature="equalsWithDifferentObject()" name="equalsWithDifferentObject" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithDifferentObject -->
+      </class> <!-- com.qa.domain.WindowUnitTest -->
+      <class name="com.qa.service.ManufacturerServiceUnitTest">
+        <test-method status="PASS" signature="deleteManufacturerTest()" name="deleteManufacturerTest" duration-ms="40" started-at="2020-05-20T12:21:04Z" finished-at="2020-05-20T12:21:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteManufacturerTest -->
+        <test-method status="PASS" signature="createManufacturerTest()" name="createManufacturerTest" duration-ms="29" started-at="2020-05-20T12:21:04Z" finished-at="2020-05-20T12:21:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createManufacturerTest -->
+        <test-method status="PASS" signature="updateManufacturersTest()" name="updateManufacturersTest" duration-ms="35" started-at="2020-05-20T12:21:04Z" finished-at="2020-05-20T12:21:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateManufacturersTest -->
+        <test-method status="PASS" signature="readManufacturersTest()" name="readManufacturersTest" duration-ms="45" started-at="2020-05-20T12:21:04Z" finished-at="2020-05-20T12:21:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- readManufacturersTest -->
+        <test-method status="PASS" signature="findManufacturerByIDTest()" name="findManufacturerByIDTest" duration-ms="50" started-at="2020-05-20T12:21:04Z" finished-at="2020-05-20T12:21:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findManufacturerByIDTest -->
+      </class> <!-- com.qa.service.ManufacturerServiceUnitTest -->
+      <class name="com.qa.domain.DoorUnitTest">
+        <test-method status="PASS" signature="doorIdNotEqual()" name="doorIdNotEqual" duration-ms="14" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doorIdNotEqual -->
+        <test-method status="PASS" signature="checkEquality()" name="checkEquality" duration-ms="13" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEquality -->
+        <test-method status="PASS" signature="emptyConstructor()" name="emptyConstructor" duration-ms="14" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyConstructor -->
+        <test-method status="PASS" signature="constructorWithoutId()" name="constructorWithoutId" duration-ms="13" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- constructorWithoutId -->
+        <test-method status="PASS" signature="equalsWithDifferentObject()" name="equalsWithDifferentObject" duration-ms="14" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithDifferentObject -->
+        <test-method status="PASS" signature="hashCodeTest()" name="hashCodeTest" duration-ms="14" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTest -->
+        <test-method status="PASS" signature="checkEqualityBetweenDifferentObjects()" name="checkEqualityBetweenDifferentObjects" duration-ms="13" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEqualityBetweenDifferentObjects -->
+        <test-method status="PASS" signature="equalsWithNull()" name="equalsWithNull" duration-ms="14" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithNull -->
+        <test-method status="PASS" signature="createDoorWithId()" name="createDoorWithId" duration-ms="13" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createDoorWithId -->
+        <test-method status="PASS" signature="hashCodeTestWithNull()" name="hashCodeTestWithNull" duration-ms="14" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTestWithNull -->
+      </class> <!-- com.qa.domain.DoorUnitTest -->
+      <class name="com.qa.rest.ManufacturerControllerUnitTest">
+        <test-method status="PASS" signature="deleteManufacturerTest()" name="deleteManufacturerTest" duration-ms="24" started-at="2020-05-20T12:19:48Z" finished-at="2020-05-20T12:19:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteManufacturerTest -->
+        <test-method status="PASS" signature="findManufacturerByIDTest()" name="findManufacturerByIDTest" duration-ms="25" started-at="2020-05-20T12:19:48Z" finished-at="2020-05-20T12:19:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findManufacturerByIDTest -->
+        <test-method status="PASS" signature="getAllManufacturersTest()" name="getAllManufacturersTest" duration-ms="21" started-at="2020-05-20T12:19:48Z" finished-at="2020-05-20T12:19:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAllManufacturersTest -->
+        <test-method status="PASS" signature="updateManufacturersTest()" name="updateManufacturersTest" duration-ms="23" started-at="2020-05-20T12:19:48Z" finished-at="2020-05-20T12:19:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateManufacturersTest -->
+        <test-method status="PASS" signature="createManufacturerTest()" name="createManufacturerTest" duration-ms="22" started-at="2020-05-20T12:19:48Z" finished-at="2020-05-20T12:19:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createManufacturerTest -->
+      </class> <!-- com.qa.rest.ManufacturerControllerUnitTest -->
+      <class name="com.qa.service.WindowServiceUnitTest">
+        <test-method status="PASS" signature="deleteWindowTest()" name="deleteWindowTest" duration-ms="43" started-at="2020-05-20T12:21:23Z" finished-at="2020-05-20T12:21:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteWindowTest -->
+        <test-method status="PASS" signature="findWindowByIDTest()" name="findWindowByIDTest" duration-ms="35" started-at="2020-05-20T12:21:23Z" finished-at="2020-05-20T12:21:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findWindowByIDTest -->
+        <test-method status="PASS" signature="updateWindowsTest()" name="updateWindowsTest" duration-ms="47" started-at="2020-05-20T12:21:23Z" finished-at="2020-05-20T12:21:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateWindowsTest -->
+        <test-method status="PASS" signature="readWindowsTest()" name="readWindowsTest" duration-ms="50" started-at="2020-05-20T12:21:23Z" finished-at="2020-05-20T12:21:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- readWindowsTest -->
+        <test-method status="PASS" signature="createWindowTest()" name="createWindowTest" duration-ms="39" started-at="2020-05-20T12:21:23Z" finished-at="2020-05-20T12:21:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createWindowTest -->
+      </class> <!-- com.qa.service.WindowServiceUnitTest -->
+      <class name="com.qa.rest.ManufacturerControllerIntegrationTest">
+        <test-method status="PASS" signature="testDeleteManufacturer() throws java.lang.Exception" name="testDeleteManufacturer" duration-ms="10509" started-at="2020-05-20T12:19:25Z" finished-at="2020-05-20T12:19:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteManufacturer -->
+        <test-method status="PASS" signature="testCreateManufacturer() throws java.lang.Exception" name="testCreateManufacturer" duration-ms="5722" started-at="2020-05-20T12:19:25Z" finished-at="2020-05-20T12:19:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateManufacturer -->
+        <test-method status="PASS" signature="testUpdateManufacturer() throws java.lang.Exception" name="testUpdateManufacturer" duration-ms="22488" started-at="2020-05-20T12:19:25Z" finished-at="2020-05-20T12:19:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateManufacturer -->
+        <test-method status="PASS" signature="testGetAllManufacturers() throws java.lang.Exception" name="testGetAllManufacturers" duration-ms="18178" started-at="2020-05-20T12:19:25Z" finished-at="2020-05-20T12:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAllManufacturers -->
+        <test-method status="PASS" signature="testGetManufacturer() throws java.lang.Exception" name="testGetManufacturer" duration-ms="14303" started-at="2020-05-20T12:19:25Z" finished-at="2020-05-20T12:19:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetManufacturer -->
+      </class> <!-- com.qa.rest.ManufacturerControllerIntegrationTest -->
+      <class name="com.qa.rest.LiftControllerUnitTest">
+        <test-method status="PASS" signature="createLiftTest()" name="createLiftTest" duration-ms="33" started-at="2020-05-20T12:19:25Z" finished-at="2020-05-20T12:19:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createLiftTest -->
+        <test-method status="PASS" signature="getAllLiftsTest()" name="getAllLiftsTest" duration-ms="24" started-at="2020-05-20T12:19:25Z" finished-at="2020-05-20T12:19:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAllLiftsTest -->
+        <test-method status="PASS" signature="updateLiftsTest()" name="updateLiftsTest" duration-ms="31" started-at="2020-05-20T12:19:25Z" finished-at="2020-05-20T12:19:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateLiftsTest -->
+        <test-method status="PASS" signature="findLiftByIDTest()" name="findLiftByIDTest" duration-ms="27" started-at="2020-05-20T12:19:25Z" finished-at="2020-05-20T12:19:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findLiftByIDTest -->
+        <test-method status="PASS" signature="deleteLiftTest()" name="deleteLiftTest" duration-ms="26" started-at="2020-05-20T12:19:25Z" finished-at="2020-05-20T12:19:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteLiftTest -->
+      </class> <!-- com.qa.rest.LiftControllerUnitTest -->
+      <class name="com.qa.service.LiftServiceIntegrationTest">
+        <test-method status="PASS" signature="testDeleteLift()" name="testDeleteLift" duration-ms="18886" started-at="2020-05-20T12:20:38Z" finished-at="2020-05-20T12:20:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteLift -->
+        <test-method status="PASS" signature="testCreateLift()" name="testCreateLift" duration-ms="14224" started-at="2020-05-20T12:20:38Z" finished-at="2020-05-20T12:20:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateLift -->
+        <test-method status="PASS" signature="testFindLiftByID()" name="testFindLiftByID" duration-ms="3514" started-at="2020-05-20T12:20:38Z" finished-at="2020-05-20T12:20:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFindLiftByID -->
+        <test-method status="PASS" signature="testUpdateLift()" name="testUpdateLift" duration-ms="7523" started-at="2020-05-20T12:20:38Z" finished-at="2020-05-20T12:20:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateLift -->
+        <test-method status="PASS" signature="testReadLifts()" name="testReadLifts" duration-ms="11060" started-at="2020-05-20T12:20:38Z" finished-at="2020-05-20T12:20:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testReadLifts -->
+      </class> <!-- com.qa.service.LiftServiceIntegrationTest -->
+      <class name="com.qa.rest.WindowControllerUnitTest">
+        <test-method status="PASS" signature="createWindowTest()" name="createWindowTest" duration-ms="23" started-at="2020-05-20T12:20:06Z" finished-at="2020-05-20T12:20:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createWindowTest -->
+        <test-method status="PASS" signature="updateWindowsTest()" name="updateWindowsTest" duration-ms="26" started-at="2020-05-20T12:20:06Z" finished-at="2020-05-20T12:20:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateWindowsTest -->
+        <test-method status="PASS" signature="getAllWindowsTest()" name="getAllWindowsTest" duration-ms="28" started-at="2020-05-20T12:20:06Z" finished-at="2020-05-20T12:20:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAllWindowsTest -->
+        <test-method status="PASS" signature="deleteWindowTest()" name="deleteWindowTest" duration-ms="24" started-at="2020-05-20T12:20:06Z" finished-at="2020-05-20T12:20:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteWindowTest -->
+        <test-method status="PASS" signature="findWindowByIDTest()" name="findWindowByIDTest" duration-ms="21" started-at="2020-05-20T12:20:06Z" finished-at="2020-05-20T12:20:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findWindowByIDTest -->
+      </class> <!-- com.qa.rest.WindowControllerUnitTest -->
+      <class name="com.qa.dto.WindowDTOUnitTest">
+        <test-method status="PASS" signature="checkEqualityBetweenDifferentObjects()" name="checkEqualityBetweenDifferentObjects" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEqualityBetweenDifferentObjects -->
+        <test-method status="PASS" signature="constructorWithoutId()" name="constructorWithoutId" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- constructorWithoutId -->
+        <test-method status="PASS" signature="hashCodeTestWithNull()" name="hashCodeTestWithNull" duration-ms="0" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTestWithNull -->
+        <test-method status="PASS" signature="hashCodeTest()" name="hashCodeTest" duration-ms="0" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTest -->
+        <test-method status="PASS" signature="equalsWithNull()" name="equalsWithNull" duration-ms="0" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithNull -->
+        <test-method status="PASS" signature="windowIdNotEqual()" name="windowIdNotEqual" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- windowIdNotEqual -->
+        <test-method status="PASS" signature="checkEquality()" name="checkEquality" duration-ms="0" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEquality -->
+        <test-method status="PASS" signature="equalsWithDifferentObject()" name="equalsWithDifferentObject" duration-ms="0" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithDifferentObject -->
+        <test-method status="PASS" signature="createWindowWithId()" name="createWindowWithId" duration-ms="0" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createWindowWithId -->
+        <test-method status="PASS" signature="emptyConstructor()" name="emptyConstructor" duration-ms="0" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyConstructor -->
+      </class> <!-- com.qa.dto.WindowDTOUnitTest -->
+      <class name="com.qa.rest.LiftControllerIntegrationTest">
+        <test-method status="PASS" signature="testDeleteLift() throws java.lang.Exception" name="testDeleteLift" duration-ms="18889" started-at="2020-05-20T12:19:06Z" finished-at="2020-05-20T12:19:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteLift -->
+        <test-method status="PASS" signature="testGetLift() throws java.lang.Exception" name="testGetLift" duration-ms="10813" started-at="2020-05-20T12:19:06Z" finished-at="2020-05-20T12:19:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetLift -->
+        <test-method status="PASS" signature="testCreateLift() throws java.lang.Exception" name="testCreateLift" duration-ms="13971" started-at="2020-05-20T12:19:06Z" finished-at="2020-05-20T12:19:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateLift -->
+        <test-method status="PASS" signature="testGetAllLifts() throws java.lang.Exception" name="testGetAllLifts" duration-ms="3601" started-at="2020-05-20T12:19:06Z" finished-at="2020-05-20T12:19:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAllLifts -->
+        <test-method status="PASS" signature="testUpdateLift() throws java.lang.Exception" name="testUpdateLift" duration-ms="7399" started-at="2020-05-20T12:19:06Z" finished-at="2020-05-20T12:19:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateLift -->
+      </class> <!-- com.qa.rest.LiftControllerIntegrationTest -->
+      <class name="com.qa.service.LiftServiceUnitTest">
+        <test-method status="PASS" signature="createLiftTest()" name="createLiftTest" duration-ms="43" started-at="2020-05-20T12:20:57Z" finished-at="2020-05-20T12:20:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createLiftTest -->
+        <test-method status="PASS" signature="deleteLiftTest()" name="deleteLiftTest" duration-ms="31" started-at="2020-05-20T12:20:57Z" finished-at="2020-05-20T12:20:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteLiftTest -->
+        <test-method status="PASS" signature="readLiftsTest()" name="readLiftsTest" duration-ms="27" started-at="2020-05-20T12:20:57Z" finished-at="2020-05-20T12:20:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- readLiftsTest -->
+        <test-method status="PASS" signature="findLiftByIDTest()" name="findLiftByIDTest" duration-ms="34" started-at="2020-05-20T12:20:57Z" finished-at="2020-05-20T12:20:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findLiftByIDTest -->
+        <test-method status="PASS" signature="updateLiftsTest()" name="updateLiftsTest" duration-ms="39" started-at="2020-05-20T12:20:57Z" finished-at="2020-05-20T12:20:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateLiftsTest -->
+      </class> <!-- com.qa.service.LiftServiceUnitTest -->
+      <class name="com.qa.service.DoorServiceIntegrationTest">
+        <test-method status="PASS" signature="testFindDoorByID()" name="testFindDoorByID" duration-ms="17394" started-at="2020-05-20T12:20:06Z" finished-at="2020-05-20T12:20:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFindDoorByID -->
+        <test-method status="PASS" signature="testUpdateDoor()" name="testUpdateDoor" duration-ms="21377" started-at="2020-05-20T12:20:06Z" finished-at="2020-05-20T12:20:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateDoor -->
+        <test-method status="PASS" signature="testReadDoors()" name="testReadDoors" duration-ms="24834" started-at="2020-05-20T12:20:06Z" finished-at="2020-05-20T12:20:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testReadDoors -->
+        <test-method status="PASS" signature="testDeleteDoor()" name="testDeleteDoor" duration-ms="32582" started-at="2020-05-20T12:20:06Z" finished-at="2020-05-20T12:20:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteDoor -->
+        <test-method status="PASS" signature="testCreateDoor()" name="testCreateDoor" duration-ms="27964" started-at="2020-05-20T12:20:06Z" finished-at="2020-05-20T12:20:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateDoor -->
+      </class> <!-- com.qa.service.DoorServiceIntegrationTest -->
+      <class name="com.qa.dto.LiftDTOUnitTest">
+        <test-method status="PASS" signature="liftIdNotEqual()" name="liftIdNotEqual" duration-ms="0" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- liftIdNotEqual -->
+        <test-method status="PASS" signature="checkEqualityBetweenDifferentObjects()" name="checkEqualityBetweenDifferentObjects" duration-ms="0" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEqualityBetweenDifferentObjects -->
+        <test-method status="PASS" signature="hashCodeTest()" name="hashCodeTest" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTest -->
+        <test-method status="PASS" signature="equalsWithDifferentObject()" name="equalsWithDifferentObject" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithDifferentObject -->
+        <test-method status="PASS" signature="constructorWithoutId()" name="constructorWithoutId" duration-ms="0" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- constructorWithoutId -->
+        <test-method status="PASS" signature="equalsWithNull()" name="equalsWithNull" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- equalsWithNull -->
+        <test-method status="PASS" signature="createLiftWithId()" name="createLiftWithId" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createLiftWithId -->
+        <test-method status="PASS" signature="emptyConstructor()" name="emptyConstructor" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyConstructor -->
+        <test-method status="PASS" signature="hashCodeTestWithNull()" name="hashCodeTestWithNull" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hashCodeTestWithNull -->
+        <test-method status="PASS" signature="checkEquality()" name="checkEquality" duration-ms="1" started-at="2020-05-20T12:18:33Z" finished-at="2020-05-20T12:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkEquality -->
+      </class> <!-- com.qa.dto.LiftDTOUnitTest -->
+      <class name="com.qa.rest.DoorControllerUnitTest">
+        <test-method status="PASS" signature="deleteDoorTest()" name="deleteDoorTest" duration-ms="135" started-at="2020-05-20T12:19:06Z" finished-at="2020-05-20T12:19:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteDoorTest -->
+        <test-method status="PASS" signature="findDoorByIDTest()" name="findDoorByIDTest" duration-ms="133" started-at="2020-05-20T12:19:06Z" finished-at="2020-05-20T12:19:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findDoorByIDTest -->
+        <test-method status="PASS" signature="updateDoorsTest()" name="updateDoorsTest" duration-ms="136" started-at="2020-05-20T12:19:06Z" finished-at="2020-05-20T12:19:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateDoorsTest -->
+        <test-method status="PASS" signature="getAllDoorsTest()" name="getAllDoorsTest" duration-ms="138" started-at="2020-05-20T12:19:06Z" finished-at="2020-05-20T12:19:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAllDoorsTest -->
+        <test-method status="PASS" signature="createDoorTest()" name="createDoorTest" duration-ms="139" started-at="2020-05-20T12:19:06Z" finished-at="2020-05-20T12:19:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createDoorTest -->
+      </class> <!-- com.qa.rest.DoorControllerUnitTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
