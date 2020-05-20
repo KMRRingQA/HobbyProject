@@ -156,14 +156,13 @@ public class AppTest
         WebElement updateItem = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("UpdateButton")));
         updateItem.click();
         test.log(LogStatus.INFO, "pressed update item button");
-        sleep(500);
+        sleep(1000);
 
-        WebElement itemSelect = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("Item_Category")));
         Select itemSelector = new Select(driver.findElement(By.name("Item_Category")));
         itemSelector.selectByValue("Window");
         test.log(LogStatus.INFO, "select window");
 
-        sleep(500);
+        sleep(1000);
         WebElement windowID = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("ID")));
         windowID.sendKeys("14");
         WebElement manufacturerID = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("manufacturerID")));
@@ -197,8 +196,9 @@ public class AppTest
         Select itemSelector2 = new Select(driver.findElement(By.name("select_item")));
         itemSelector2.selectByValue("Windows");
         test.log(LogStatus.INFO, "select windows");
+        sleep(500);
 
-        WebElement search = (new WebDriverWait(driver, 3)).until(ExpectedConditions.presenceOfElementLocated(By.id("search")));
+        WebElement search = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("search")));
         search.click();
         test.log(LogStatus.INFO, "searched for windows");
         sleep(2500);
