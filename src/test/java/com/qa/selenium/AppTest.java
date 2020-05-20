@@ -1,5 +1,8 @@
 package com.qa.selenium;
+
 import com.qa.App;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -21,9 +24,6 @@ import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-/**
- * Unit test for simple App.
- */
 public class AppTest 
 {
     WebDriver driver;
@@ -139,7 +139,7 @@ public class AppTest
         assertEquals("Selenium Door",newDoor.getText());
         test.log(LogStatus.INFO, "establishes that newly created door is present.");
     }
-    
+
     @Test
     public void updateWindow() throws InterruptedException, IOException {
         test = report.startTest("Will update a window, then check for its presence.");
