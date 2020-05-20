@@ -100,12 +100,10 @@ public class AppTest
         WebElement createItem = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("CreateButton")));
         createItem.click();
         test.log(LogStatus.INFO, "navigate to create item");
-        sleep(500);
+        sleep(2500);
 
-        WebElement itemSelect = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("Item_Category")));
         Select itemSelector = new Select(driver.findElement(By.name("Item_Category")));
         itemSelector.selectByValue("Door");
-
 
         sleep(500);
         WebElement manufacturerID = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("manufacturerID")));
@@ -156,7 +154,7 @@ public class AppTest
         WebElement updateItem = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("UpdateButton")));
         updateItem.click();
         test.log(LogStatus.INFO, "pressed update item button");
-        sleep(1000);
+        sleep(2500);
 
         Select itemSelector = new Select(driver.findElement(By.name("Item_Category")));
         itemSelector.selectByValue("Window");
@@ -224,9 +222,8 @@ public class AppTest
         WebElement deleteItem = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("DeleteButton")));
         deleteItem.click();
         test.log(LogStatus.INFO, "navigated to delete item section");
-        sleep(500);
+        sleep(2500);
 
-        WebElement itemSelect = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("Item_Category")));
         Select itemSelector = new Select(driver.findElement(By.name("Item_Category")));
         itemSelector.selectByValue("lift");
         test.log(LogStatus.INFO, "select Lift");
